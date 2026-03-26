@@ -1,0 +1,358 @@
+/* This rule positions the entire floating window */
+.abacus-popup-wrapper {
+  position: fixed;
+  z-index: 10000;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+/* This is the container for the abacus, value, and button */
+.abacus-widget-container {
+  text-align: center;
+}
+
+/* Close button styles */
+.abacus-close-button {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 20;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ff4757;
+  color: white;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+  padding: 0;
+  font-weight: bold;
+}
+
+.abacus-close-button:hover {
+  background-color: #ee5a6f;
+  transform: scale(1.1);
+}
+
+.abacus-close-button:active {
+  transform: scale(0.95);
+}
+
+/* This new style ensures the handle is on top of other elements INSIDE the popup */
+.abacus-drag-handle {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding: 6px;
+  cursor: move;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  font-weight: bold;
+  user-select: none;
+  font-size: 12px;
+  touch-action: none;
+}
+
+#abacus {
+  display: flex;
+  justify-content: center;
+  background: #ffffff;
+  border: 4px solid #000;
+  padding: 12px;
+  border-radius: 10px;
+  width: max-content;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+  margin-top: 8px;
+}
+
+.rod {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20px;
+  margin: 0 6px;
+  position: relative;
+  background-image: linear-gradient(to right, #777, #ccc, #777);
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.divider {
+  width: 120%;
+  height: 4px;
+  background: #333;
+  margin: 12px 0;
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.top-bead, .bottom-bead {
+  width: 32px;
+  height: 20px;
+  border-radius: 50% / 40%;
+  margin: 3px 0;
+  cursor: pointer;
+  transition: transform 0.15s ease-out;
+  z-index: 2;
+  background: linear-gradient(145deg, #c8342b, #8b2318);
+  box-shadow: inset -2px -3px 5px rgba(0,0,0,0.4), inset 2px 2px 4px rgba(255,100,80,0.3), 0 3px 6px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+.top-bead::before, .bottom-bead::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 4px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 50%;
+}
+
+.top-bead.active {
+  transform: translateY(18px);
+}
+
+.bottom-bead.active {
+  transform: translateY(-20px);
+}
+
+.abacus-widget-container h2 {
+  font-size: 16px;
+  margin: 10px 0 5px 0;
+  color: #333;
+}
+
+.abacus-widget-container h2 #output {
+  color: #3742fa;
+  font-weight: bold;
+}
+
+button#resetBtn {
+  padding: 6px 14px;
+  margin-top: 8px;
+  font-size: 13px;
+  border: none;
+  border-radius: 6px;
+  background: #3742fa;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+}
+
+button#resetBtn:hover {
+  background: #2f3542;
+}
+
+button#resetBtn:active {
+  transform: scale(0.98);
+}
+
+/* Tablet and smaller screens */
+@media only screen and (max-width: 768px) {
+  .abacus-close-button {
+    width: 28px;
+    height: 28px;
+    font-size: 20px;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .abacus-popup-wrapper {
+    padding: 10px;
+    border-radius: 12px;
+  }
+  
+  .abacus-drag-handle {
+    padding: 5px;
+    font-size: 11px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  
+  #abacus {
+    padding: 10px;
+    margin-top: 6px;
+    border: 3px solid #000;
+  }
+  
+  .rod {
+    width: 18px;
+    margin: 0 5px;
+  }
+  
+  .top-bead, .bottom-bead {
+    width: 28px;
+    height: 18px;
+    margin: 2px 0;
+  }
+  
+  .divider {
+    height: 3px;
+    margin: 10px 0;
+  }
+  
+  .top-bead.active {
+    transform: translateY(15px);
+  }
+  
+  .bottom-bead.active {
+    transform: translateY(-16px);
+  }
+  
+  .abacus-widget-container h2 {
+    font-size: 14px;
+    margin: 8px 0 4px 0;
+  }
+  
+  button#resetBtn {
+    padding: 5px 12px;
+    margin-top: 6px;
+    font-size: 12px;
+  }
+}
+
+/* Mobile screens - Increased sizes */
+@media only screen and (max-width: 600px) {
+  .abacus-close-button {
+    width: 32px;
+    height: 32px;
+    font-size: 22px;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .abacus-popup-wrapper {
+    padding: 12px;
+    border-radius: 12px;
+    max-height: 85vh;
+  }
+  
+  .abacus-drag-handle {
+    padding: 6px;
+    font-size: 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  
+  #abacus {
+    padding: 14px;
+    margin-top: 8px;
+    border-radius: 10px;
+    border: 4px solid #000;
+  }
+  
+  .rod {
+    width: 24px;
+    margin: 0 12px;
+  }
+  
+  .top-bead, .bottom-bead {
+    width: 38px;
+    height: 24px;
+    margin: 4px 0;
+  }
+  
+  .divider {
+    height: 4px;
+    margin: 14px 0;
+  }
+  
+  .top-bead.active {
+    transform: translateY(20px);
+  }
+  
+  .bottom-bead.active {
+    transform: translateY(-22px);
+  }
+  
+  .abacus-widget-container h2 {
+    font-size: 16px;
+    margin: 10px 0 6px 0;
+  }
+  
+  button#resetBtn {
+    padding: 8px 16px;
+    margin-top: 8px;
+    font-size: 14px;
+  }
+}
+
+/* Very small mobile screens - Increased sizes */
+@media only screen and (max-width: 400px) {
+  .abacus-close-button {
+    width: 28px;
+    height: 28px;
+    font-size: 20px;
+    top: 8px;
+    left: 8px;
+  }
+  
+  .abacus-popup-wrapper {
+    padding: 10px;
+    max-height: 85vh;
+  }
+  
+  .abacus-drag-handle {
+    padding: 5px;
+    font-size: 11px;
+  }
+  
+  #abacus {
+    padding: 12px;
+    border: 3px solid #000;
+  }
+  
+  .rod {
+    width: 20px;
+    margin: 0 10px;
+  }
+  
+  .top-bead, .bottom-bead {
+    width: 36px;
+    height: 22px;
+    margin: 3px 0;
+  }
+  
+  .divider {
+    height: 4px;
+    margin: 12px 0;
+  }
+  
+  .top-bead.active {
+    transform: translateY(18px);
+  }
+  
+  .bottom-bead.active {
+    transform: translateY(-20px);
+  }
+  
+  .abacus-widget-container h2 {
+    font-size: 15px;
+    margin: 8px 0 4px 0;
+  }
+  
+  button#resetBtn {
+    padding: 6px 14px;
+    margin-top: 6px;
+    font-size: 13px;
+  }
+}

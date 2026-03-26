@@ -1,0 +1,389 @@
+﻿.teacher-registration-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.teacher-registration-container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    max-width: 700px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease-in-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.teacher-registration-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    border-bottom: 2px solid #f0f0f0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 15px 15px 0 0;
+}
+
+.teacher-registration-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+    transform: scale(1.2) rotate(90deg);
+}
+
+.teacher-registration-body {
+    padding: 2rem;
+}
+
+.teacher-name-section {
+    margin-bottom: 2rem;
+}
+
+.teacher-name-section label {
+    display: block;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.required {
+    color: #ff6b6b;
+}
+
+.teacher-name-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.teacher-name-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.3);
+}
+
+.groups-section {
+    margin-top: 2rem;
+}
+
+.groups-section h3 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.group-card {
+    background-color: #f9f9f9;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.group-card:hover {
+    border-color: #667eea;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.group-header {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.group-name-input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.group-name-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.3);
+}
+
+.remove-group-btn {
+    padding: 0.6rem 1.2rem;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.remove-group-btn:hover {
+    background-color: #ff5252;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.students-section {
+    margin-top: 1rem;
+}
+
+.students-section label {
+    display: block;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+.student-input-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+    align-items: center;
+}
+
+.student-name-input {
+    flex: 1;
+    padding: 0.7rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.student-name-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 6px rgba(102, 126, 234, 0.2);
+}
+
+.remove-student-btn {
+    padding: 0.5rem 0.8rem;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    min-width: 35px;
+}
+
+.remove-student-btn:hover {
+    background-color: #ff5252;
+    transform: scale(1.1);
+}
+
+.add-student-btn {
+    margin-top: 0.8rem;
+    padding: 0.6rem 1rem;
+    background-color: #667eea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.add-student-btn:hover {
+    background-color: #5568d3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.add-group-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.add-group-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+}
+
+.teacher-registration-footer {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    padding: 2rem;
+    border-top: 2px solid #f0f0f0;
+    background-color: #f9f9f9;
+    border-radius: 0 0 15px 15px;
+}
+
+.popup-btn, .popup-btn2 {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.popup-btn {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.popup-btn:hover {
+    background-color: #d0d0d0;
+    transform: translateY(-2px);
+}
+
+.popup-btn2 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.popup-btn2:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.popup-btn2:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.error {
+    padding: 1rem;
+    background-color: #fff5f5;
+    border-left: 4px solid #ff6b6b;
+    color: #c92a2a;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.error-dengare {
+    background-color: #fff5f5;
+    border-left-color: #ff6b6b;
+    color: #c92a2a;
+}
+
+.teacher-registration-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.teacher-registration-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.teacher-registration-container::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 10px;
+}
+
+.teacher-registration-container::-webkit-scrollbar-thumb:hover {
+    background: #5568d3;
+}
+
+@media (max-width: 768px) {
+    .teacher-registration-modal {
+        padding: 1rem;
+    }
+
+    .teacher-registration-container {
+        max-width: 100%;
+        max-height: 90vh;
+    }
+
+    .teacher-registration-header {
+        padding: 1.5rem;
+    }
+
+    .teacher-registration-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .teacher-registration-body {
+        padding: 1.5rem;
+    }
+
+    .group-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .group-name-input {
+        width: 100%;
+    }
+
+    .remove-group-btn {
+        width: 100%;
+    }
+
+    .teacher-registration-footer {
+        flex-direction: column;
+    }
+
+    .popup-btn, .popup-btn2 {
+        width: 100%;
+    }
+}

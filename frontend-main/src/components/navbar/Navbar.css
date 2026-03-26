@@ -1,0 +1,215 @@
+﻿.nav-container {
+  padding: 1rem 2rem;
+}
+
+.nav-container img {
+  width: 218px;
+}
+
+.nav-right-side img {
+  width: 55px !important;
+}
+
+.school-avatar{
+  width: 400px !important;
+}
+
+.nav-btn {
+  padding: 0.6rem 1.5rem;
+  font-size: 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: 50px;
+  background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+  background-size: 600%;
+  -webkit-animation: anime 16s linear infinite;
+  animation: anime 16s linear infinite;
+}
+
+.nav-btn-signup {
+  background: linear-gradient(-45deg, #4CAF50, #45a049, #2e7d32, #1b5e20);
+  background-size: 600%;
+}
+
+.gear{
+  color: #5d17eb;
+  margin-right: 1rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.homework-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.2rem;
+  margin-right: 1rem;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 50%, #f86c8c 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  border: none;
+}
+
+.homework-btn span {
+  font-size: 1.3rem;
+  display: inline-block;
+}
+
+.homework-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+  background: linear-gradient(135deg, #ff5252 0%, #ee3d5f 50%, #f85c7c 100%);
+}
+
+.homework-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+}
+
+.teachers-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.2rem;
+  margin-right: 1rem;
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 50%, #087e8b 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  border: none;
+}
+
+.teachers-btn span {
+  font-size: 1.3rem;
+  display: inline-block;
+}
+
+.teachers-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(78, 205, 196, 0.4);
+  background: linear-gradient(135deg, #52dfd8 0%, #4ab896 50%, #099399 100%);
+}
+
+.teachers-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(78, 205, 196, 0.3);
+}
+
+@-webkit-keyframes anime {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes anime {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+  .nav-container {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-container {
+    padding: 1rem 0.7rem;
+  }
+
+  .gear{
+    display: none;
+  }
+}
+
+/* Mobile devices (phones, 576px and below) */
+@media only screen and (max-width: 576px) {
+  .nav-container {
+    padding: 0.8rem 0.5rem;
+  }
+
+  .nav-container img {
+    width: 150px;
+  }
+
+  .homework-btn {
+    padding: 0.5rem 0.7rem;
+    font-size: 12px;
+    margin-right: 0.5rem;
+    gap: 0.3rem;
+  }
+
+  .homework-btn span {
+    font-size: 1rem;
+  }
+
+  .teachers-btn {
+    padding: 0.5rem 0.7rem;
+    font-size: 12px;
+    margin-right: 0.5rem;
+    gap: 0.3rem;
+  }
+
+  .teachers-btn span {
+    font-size: 1rem;
+  }
+
+  .nav-btn {
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+  }
+
+  .nav-right-side img {
+    width: 45px !important;
+  }
+}
+
+/* Extra small devices (320px and above) */
+@media only screen and (max-width: 420px) {
+  .homework-btn, .teachers-btn {
+    white-space: nowrap;
+    padding: 0.4rem 0.5rem;
+    font-size: 11px;
+  }
+
+  .homework-btn span, .teachers-btn span {
+    font-size: 0.9rem;
+  }
+
+  .nav-container img {
+    width: 120px;
+  }
+
+  .nav-right-side img {
+    width: 40px !important;
+  }
+}

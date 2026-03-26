@@ -1,0 +1,72 @@
+.res-pas-email {
+    height: 100vh;
+}
+
+.res-pas-email-logo {
+    margin-bottom: 1.5rem;
+}
+
+.res-pas-email-logo img {
+    width: 280px;
+}
+
+.res-pas-email-title p {
+    font-size: 25px;
+    color: rgb(40, 39, 39);
+}
+
+.res-pas-email-title {
+    margin-bottom: 1.6rem;
+}
+
+.res-pas-email-input input{
+    margin-bottom: 1.3rem;
+    padding: 0.8rem 1rem;
+    border-radius: 20px;
+    font-size: 17px;
+    width: 340px;
+    border: 1px solid rgb(154, 152, 152);
+}
+
+.res-email-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 20px;
+    text-align: center;
+    width: 340px;
+    color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+    background-size: 600%;
+    cursor: pointer;
+    -webkit-animation: anime 16s linear infinite;
+    animation: anime 16s linear infinite;
+    cursor: pointer;
+}
+
+@-webkit-keyframes anime {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes anime {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

@@ -1,0 +1,446 @@
+/* Add font-face at the very top */
+@font-face {
+    font-family: 'Comic Jungle';
+    src: url('../../fonts/Happy\ School.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Spicy Sale';
+    src: url('../../fonts/Spicy\ Sale.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.home {
+    min-height: 100vh;
+    background-image: url('../../img/webbackground10.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 2rem;
+}
+
+.home-container {
+    padding: 2.5rem 3.5rem 3.5rem 3.5rem;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 250, 240, 0.92) 100%);
+    margin: 1rem auto 2rem auto;
+    border-radius: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15),
+                0 8px 20px rgba(255, 107, 107, 0.1);
+    backdrop-filter: blur(10px);
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    text-align: center;
+    max-width: 900px;
+    width: calc(100% - 4rem);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Floating Help Button */
+.floating-help-btn {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FF4444 0%, #CC0000 100%);
+    border: 3px solid white;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 24px rgba(255, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 999999;
+    animation: pulse-help 2.5s ease-in-out infinite;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.floating-help-btn:hover {
+    transform: translateY(-6px) scale(1.1);
+    box-shadow: 0 10px 35px rgba(255, 0, 0, 0.7), 0 4px 12px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #FF5555 0%, #DD0000 100%);
+}
+
+.floating-help-btn:active {
+    transform: translateY(-3px) scale(1.05);
+}
+
+@keyframes pulse-help {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 6px 24px rgba(255, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        transform: scale(1.08);
+        box-shadow: 0 8px 32px rgba(255, 0, 0, 0.7), 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.home-title {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    animation: fadeIn 1s ease-out 0.3s both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.home-title h1 {
+    margin: 0.2rem 0;
+    padding: 0;
+    font-weight: 900;
+    font-size: 64px;
+    font-family: 'Spicy Sale', cursive, sans-serif;
+    letter-spacing: 4px;
+    display: block;
+    line-height: 1.1;
+}
+
+/* Unified color for both "WELCOME TO" and "ABACUS HEROES" - Vibrant orange */
+.home-title h1.text-purple,
+.home-title h1.text-red {
+    background: linear-gradient(to bottom, 
+        #FFD4A3 0%,
+        #FFC491 15%,
+        #FFB580 30%,
+        #FFA56E 50%,
+        #FF965D 70%,
+        #E8825A 85%,
+        #C96F4F 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0px 2px 0px rgba(255, 255, 255, 0.8))
+            drop-shadow(0px 4px 0px rgba(255, 200, 160, 0.4))
+            drop-shadow(0px 6px 0px rgba(255, 180, 140, 0.3))
+            drop-shadow(0px 10px 20px rgba(232, 130, 90, 0.25));
+}
+
+.home-paragraph {
+    margin-top: 1.5rem;
+    font-size: 34px;
+    font-weight: 800;
+    color: #FF6B6B;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    line-height: 1.5;
+    text-shadow: 3px 3px 0px rgba(255, 230, 109, 0.6),
+                 -1px -1px 0px rgba(255, 255, 255, 0.8);
+    letter-spacing: 1.5px;
+    animation: fadeIn 1s ease-out 0.5s both;
+}
+
+.home-paragraph p {
+    margin: 0.5rem 0;
+}
+
+.home-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 1.3rem 3.2rem;
+    font-size: 32px;
+    text-align: center;
+    color: white;
+    border-radius: 60px;
+    background: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 50%, #4ECDC4 100%);
+    background-size: 200% auto;
+    cursor: pointer;
+    margin-top: 2rem;
+    font-weight: 900;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    border: 6px solid white;
+    box-shadow: 0 8px 0px #D95858, 
+                0 15px 35px rgba(255, 107, 107, 0.4),
+                inset 0 2px 0px rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-out 0.7s both, subtlePulse 2s ease-in-out 2s infinite;
+}
+
+@keyframes subtlePulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+}
+
+.home-btn .btn-text {
+    position: relative;
+    z-index: 2;
+}
+
+.home-btn .btn-arrow {
+    position: relative;
+    z-index: 2;
+    font-size: 42px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.home-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+.home-btn:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 10px 0px #D95858, 
+                0 20px 45px rgba(255, 107, 107, 0.5),
+                inset 0 2px 0px rgba(255, 255, 255, 0.6);
+    background-position: 100% center;
+}
+
+.home-btn:hover::before {
+    left: 100%;
+}
+
+.home-btn:hover .btn-arrow {
+    transform: translateX(8px);
+}
+
+.home-btn:active {
+    transform: scale(1.05) translateY(2px);
+    box-shadow: 0 4px 0px #D95858, 
+                0 8px 25px rgba(255, 107, 107, 0.3);
+}
+
+.home-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0 1rem 0;
+    animation: fadeIn 1s ease-out 0.9s both;
+}
+
+.home-option-card {
+    background: white;
+    border: 3px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    overflow: hidden;
+}
+
+.home-option-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.home-option-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    border-color: #FF6B6B;
+    box-shadow: 0 15px 40px rgba(255, 107, 107, 0.3);
+}
+
+.home-option-card:hover::before {
+    left: 100%;
+}
+
+.home-option-card:active {
+    transform: translateY(-4px) scale(1.02);
+}
+
+.option-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem auto;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.home-option-card:hover .option-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.teacher-icon {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.home-option-card h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #333;
+    margin: 0 0 0.5rem 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.home-option-card p {
+    font-size: 15px;
+    color: #666;
+    margin: 0 0 1rem 0;
+    line-height: 1.4;
+}
+
+.option-badge {
+    display: inline-block;
+    background: #4ECDC4;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.trial-badge {
+    background: linear-gradient(135deg, #FFD93D 0%, #FF6B6B 100%);
+}
+
+.home-mobile{
+    display: none;
+}
+
+.mobile-bannar{
+    margin-bottom: 0.6rem;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+    .home{
+        display: none;
+    }
+    .home-mobile{
+        display: block;
+    }
+    .home-title{
+        padding-left: 1.5rem;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    .home-title h1 {
+        font-size: 60px;
+    }
+    .home-container {
+        margin: 1rem;
+        padding: 2rem 1.5rem;
+    }
+    .home-paragraph {
+        font-size: 32px;
+    }
+    .home-btn {
+        font-size: 30px;
+        padding: 1.2rem 3rem;
+    }
+    .floating-help-btn {
+        bottom: 90px;
+        right: 20px;
+        width: 64px;
+        height: 64px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+    .home-title h1 {
+        font-size: 40px;
+        letter-spacing: 2px;
+    }
+    .home-title{
+        padding-left: 0.8rem;
+        margin-top: 0.5rem;
+    }
+    .home-paragraph {
+        font-size: 28px;
+        margin-top: 1.5rem;
+    }
+    .home-btn {
+        font-size: 26px;
+        padding: 1rem 2.5rem;
+        gap: 10px;
+    }
+    .home-btn .btn-arrow {
+        font-size: 32px;
+    }
+    .home-container {
+        margin: 0.5rem;
+        padding: 2rem 1rem;
+    }
+    .home-options {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin: 1.5rem 0 0.5rem 0;
+    }
+    .home-option-card {
+        padding: 1.5rem 1rem;
+    }
+    .home-option-card h3 {
+        font-size: 20px;
+    }
+    .home-option-card p {
+        font-size: 14px;
+    }
+    .option-icon {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* Extra small devices (phones, 480px and down) */
+@media only screen and (max-width: 480px) {
+    .floating-help-btn {
+        bottom: 85px;
+        right: 15px;
+        width: 60px;
+        height: 60px;
+    }
+}
