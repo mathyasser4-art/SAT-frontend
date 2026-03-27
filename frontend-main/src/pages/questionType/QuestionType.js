@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom';
-import { CheckCircle2, RadioButton } from 'lucide-react'
+import { Circle, CircleDot } from 'lucide-react';
 import soundEffects from '../../utils/soundEffects'
 import '../../reusable.css'
 import './QuestionType.css'
@@ -19,7 +19,7 @@ function QuestionType() {
         <div className="questionType-options">
           <Link to={'/system/65a4963482dbaac16d820fc6'} className="questionType-option" onClick={() => soundEffects.playClick()}>
             <div className="option-icon-wrapper">
-              <RadioButton size={64} strokeWidth={2} className="mcq-icon" />
+              <CircleDot size={64} strokeWidth={2} className="mcq-icon" />
             </div>
             <h3 className="option-title">{t('academy.freeWorksheets')}</h3>
             <p className="option-description">{t('academy.freeWorksheetsDesc')}</p>

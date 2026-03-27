@@ -5,7 +5,7 @@ const USE_LOCAL = process.env.REACT_APP_USE_LOCAL === 'true';
 
 const API_CONFIG = {
   local: 'http://localhost:54112',
-  production: 'https://backend-production-6752.up.railway.app'
+  production: 'https://sat-backend-production.up.railway.app'
 };
 
 export const API_BASE_URL = USE_LOCAL ? API_CONFIG.local : API_CONFIG.production;
