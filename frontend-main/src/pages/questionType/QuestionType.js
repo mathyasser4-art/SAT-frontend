@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom';
-import { Circle, CircleDot } from 'lucide-react';
+import { Circle, CircleDot, CheckCircle2 } from 'lucide-react';
 import soundEffects from '../../utils/soundEffects'
 import '../../reusable.css'
 import './QuestionType.css'
