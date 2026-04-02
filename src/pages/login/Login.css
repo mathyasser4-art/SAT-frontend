@@ -1,0 +1,117 @@
+.login {
+    height: 100vh;
+}
+
+.login-logo {
+    margin-bottom: 1.5rem;
+}
+
+.login-logo img {
+    width: 280px;
+}
+
+.login-title p {
+    font-size: 25px;
+    color: rgb(40, 39, 39);
+}
+
+.login-title {
+    margin-bottom: 2rem;
+}
+
+.login-form {
+    width: 340px;
+}
+
+.login-form input {
+    display: block;
+    margin-bottom: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 20px;
+    font-size: 17px;
+    width: 340px;
+    border: 1px solid rgb(154, 152, 152);
+}
+
+::placeholder {
+    font-size: 16px;
+    color: rgb(151, 148, 148);
+}
+
+.login-form p {
+    text-align: end;
+    margin-bottom: 3rem;
+    font-size: 15px;
+}
+
+.login-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 20px;
+    text-align: center;
+    width: 340px;
+    color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+    background-size: 600%;
+    cursor: pointer;
+    -webkit-animation: anime 16s linear infinite;
+    animation: anime 16s linear infinite;
+}
+
+@-webkit-keyframes anime {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes anime {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.login-or{
+    margin-top: 1.5rem;
+}
+
+.or-line{
+    width: 150px;
+    height: 1px;
+    margin: 0rem 0.5rem;
+    background-color: rgb(176, 174, 174);
+}
+
+.google-btn{
+    background-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
+    width: 340px;
+    border-radius: 15px;
+    padding: 0.6rem 1.5rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.google-btn img{
+    width: 30px;;
+    margin-right: 0.5rem;
+}
+
+.login-footer{
+    margin-top: 2rem;
+}

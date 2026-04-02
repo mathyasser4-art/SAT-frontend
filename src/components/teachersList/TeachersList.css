@@ -1,0 +1,274 @@
+﻿.teachers-list-container {
+    width: 100%;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    margin: 2rem 0;
+}
+
+.teachers-list-title {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.teachers-empty-state {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: white;
+    border-radius: 10px;
+    border: 2px dashed #e0e0e0;
+}
+
+.teachers-empty-state h3 {
+    color: #667eea;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.teachers-empty-state p {
+    color: #999;
+    font-size: 1rem;
+}
+
+.teachers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.teacher-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 2px solid #e0e0e0;
+}
+
+.teacher-card:hover {
+    border-color: #667eea;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.15);
+    transform: translateY(-4px);
+}
+
+.teacher-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.teacher-info h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.teacher-meta {
+    margin: 0.5rem 0 0 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.teacher-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.expand-btn, .delete-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.expand-btn:hover, .delete-btn:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+.delete-btn:hover {
+    background-color: rgba(255, 107, 107, 0.8);
+}
+
+.teacher-card-content {
+    padding: 1.5rem;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.groups-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.group-item {
+    background-color: #f9f9f9;
+    border-left: 4px solid #667eea;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.group-name {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.group-icon {
+    font-size: 1.2rem;
+}
+
+.group-name h4 {
+    margin: 0;
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.students-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.student-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+}
+
+.student-icon {
+    font-size: 1rem;
+}
+
+.student-item p {
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.teacher-timestamp {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.teacher-timestamp small {
+    color: #999;
+    font-size: 0.8rem;
+}
+
+.teacher-card-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.teacher-card-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.teacher-card-content::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 10px;
+}
+
+.teacher-card-content::-webkit-scrollbar-thumb:hover {
+    background: #5568d3;
+}
+
+@media (max-width: 1200px) {
+    .teachers-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .teachers-list-container {
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .teachers-list-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .teachers-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .teacher-card-header {
+        padding: 1rem;
+    }
+
+    .teacher-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .teacher-card-content {
+        padding: 1rem;
+    }
+
+    .group-item {
+        padding: 0.8rem;
+    }
+
+    .group-name h4 {
+        font-size: 1rem;
+    }
+
+    .student-item {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .teachers-list-container {
+        padding: 1rem;
+    }
+
+    .teachers-list-title {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .teacher-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .teacher-actions {
+        align-self: flex-end;
+    }
+
+    .teacher-info h3 {
+        font-size: 1rem;
+    }
+
+    .teacher-meta {
+        font-size: 0.8rem;
+    }
+}

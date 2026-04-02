@@ -1,0 +1,143 @@
+.subject-container {
+    padding: 0rem 2.2rem;
+    padding-bottom: 6.5rem;
+}
+
+.subject-header{
+    padding: 0.65rem 0.8rem;
+    background-color: #5d17eb;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+}
+
+.subject-header p{
+    margin-right: 0.5rem;
+}
+
+.subject-header p:first-child{
+    padding: 0.75rem 1rem;
+    background-color: #fff;
+    color: #5d17eb;
+    border-radius: 50%;
+}
+
+.subject-item {
+    background-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
+    padding: 1rem 0.8rem;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+}
+
+.subject-item p {
+    font-size: 17px;
+}
+
+.subject-icon i {
+    font-size: 20px;
+    margin-right: 0.4rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    background-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 15px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.subject-icon i:first-child {
+    color: #5d17eb;
+}
+
+.subject-icon:last-child {
+    color: red;
+}
+
+.update-subject-popup,
+.add-subject-popup,
+.remove-subject-popup {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(5, 5, 5, 0.5);
+    transition: 0.5s;
+}
+
+.class-subject-hide {
+    background-color: transparent !important;
+    transition: 0.5s;
+}
+
+.update-subject-container,
+.add-subject-container,
+.remove-subject-container {
+    position: absolute;
+    background-color: #fff;
+    width: 40%;
+    padding: 1rem;
+    border-radius: 10px;
+    top: 120px;
+    overflow-y: scroll;
+    max-height: 80vh;
+    transition: 0.7s;
+}
+
+.subject-top {
+    top: -1200px;
+    transition: 0.7s;
+}
+
+.remove-popup-body{
+    padding: 0.8rem 0rem;
+}
+
+.remove-popup-body h3,
+.remove-popup-body p{
+    text-align: center;
+}
+
+.remove-popup-body p{
+    font-size: 19px;
+    margin-bottom: 0.3rem;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+    .update-subject-container,
+    .add-subject-container,
+    .remove-subject-container {
+        width: 50%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    .subject-container {
+        padding: 0rem 1.2rem;
+        padding-bottom: 6.5rem;
+    }
+
+    .update-subject-container,
+    .add-subject-container,
+    .remove-subject-container {
+        width: 70%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+    .subject-container {
+        padding: 0rem 1rem;
+        padding-bottom: 6.5rem;
+    }
+
+    .update-subject-container,
+    .add-subject-container,
+    .remove-subject-container {
+        width: 95%;
+    }
+}

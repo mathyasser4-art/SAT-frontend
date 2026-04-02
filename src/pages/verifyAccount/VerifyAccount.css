@@ -1,0 +1,73 @@
+.verify {
+    height: 100vh;
+}
+
+.verify-logo {
+    margin-bottom: 1.5rem;
+}
+
+.verify-logo img {
+    width: 200px;
+}
+
+.verify-title p {
+    font-size: 25px;
+    color: rgb(40, 39, 39);
+}
+
+.verify-title {
+    margin-bottom: 2rem;
+}
+
+.verify-input input{
+    height: 45px;
+    width: 42px;
+    margin-right: 0.6rem;
+    outline: none;
+    text-align: center;
+    font-size: 1.125rem;
+    border: 1px solid rgb(184, 182, 182);
+    border-radius: 8px;
+}
+
+.verify-input input::-webkit-inner-spin-button,
+.verify-input input::-webkit-outer-spin-button{
+    display: none;
+}
+
+.verify-btn{
+    width: 300px;
+    margin-right: 0.7rem;
+}
+
+.verify-btn button{
+    text-align: center;
+    width: 100%;
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    border: none;
+    color: #fff;
+    background-color: #5d17eb;
+    padding: 0.8rem 0rem;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.verify-footer{
+    text-align: center;
+}
+
+.verify-footer p:first-child{
+    margin-top: 1rem;
+    font-size: 15px;
+    color: rgb(134, 133, 133);
+}
+
+.verify-footer p:last-child{
+    margin-top: 0.2rem;
+    font-size: 17px;
+    color: #5d17eb;
+    cursor: pointer;
+    font-weight: 450;
+}

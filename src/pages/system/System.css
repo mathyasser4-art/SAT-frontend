@@ -1,0 +1,72 @@
+﻿.system-container{
+    padding: 0rem 2.5rem;
+    padding-bottom: 4rem;
+}
+
+.dwon{
+    padding-bottom: 5px !important;
+}
+
+.system{
+    padding: 1rem 1rem;
+    height: 50px;
+    background-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    margin-top: 1rem;
+    transition: .6s;
+}
+
+.system::after {
+    content: "";
+    font-weight: bold;
+    font-size: 30px;
+    right: 18px;
+    top: 0px;
+    position: absolute;
+}
+
+.system-subject{
+    top: 50px;
+    display: block;
+    position: absolute;
+    height: 45px;
+    width: 97%;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-left: 0.8rem;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    background: #5d17eb;
+    font-size: 20px;
+    font-size: bold;
+    transition: .6s;
+}
+
+@media only screen and (max-width: 992px) {
+    .system-subject{
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .system-subject{
+        width: 94.5%;
+    }
+    .system-container{
+        padding: 0rem 1rem;
+        padding-bottom: 6.5rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .system-subject{
+        width: 91%;
+    }
+}

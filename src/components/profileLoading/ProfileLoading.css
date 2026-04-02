@@ -1,0 +1,38 @@
+.profile-loading-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+}
+
+.profile-loading-name {
+    width: 250px;
+    height: 25px;
+    border-radius: 3px;
+    margin-top: 1rem;
+}
+
+.profile-loading-paragraph1 {
+    width: 350px;
+    height: 10px;
+    margin-top: 0.8rem;
+}
+
+.profile-loading-paragraph2 {
+    width: 280px;
+    height: 10px;
+    margin-top: 0.4rem;
+}
+
+.profile-loading-body {
+    width: 345px;
+    height: 250px;
+    border-radius: 10px;
+    margin-top: 2.5rem;
+}
+
+.profile-loading-button {
+    width: 330px;
+    height: 42px;
+    border-radius: 25px;
+    margin-top: 2.5rem;
+}
