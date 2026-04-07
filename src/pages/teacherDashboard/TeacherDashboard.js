@@ -6,6 +6,7 @@ import UpgradePrompt from '../../components/upgradePrompt/UpgradePrompt';
 import { Link } from 'react-router-dom'
 import MathInput from "react-math-keyboard";
 import { X } from 'lucide-react'
+import DOMPurify from 'dompurify';
 import getAssignment from '../../api/teacher/getAssignment.api'
 import getClass from '../../api/teacher/getClass.api';
 import duplicateAssignment from '../../api/assignment/duplicateAssignment.api';
@@ -367,7 +368,7 @@ function TeacherDashboard() {
                                     {item?.questionPic ? <div className='d-flex question-img justify-content-center align-items-center'>
                                         <img src={item?.questionPic} alt="" />
                                     </div> : null}
-                                    <div className="ql-editor" dangerouslySetInnerHTML={{ __html: item?.question }} />
+                                    <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item?.question) }} />
                                     <div onClick={() => removeFromPocket(item._id)} className="remove-question">
                                         <i className="fa fa-trash" aria-hidden="true"></i>
                                     </div>

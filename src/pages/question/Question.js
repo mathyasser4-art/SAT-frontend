@@ -14,6 +14,7 @@ import API_BASE_URL from '../../config/api.config';
 import AbacusSimulator from '../../components/abacus/AbacusSimulator';
 import soundEffects from '../../utils/soundEffects';
 import { ArrowRight, Maximize2, Minimize2 } from 'lucide-react';
+import DOMPurify from 'dompurify';
 import '../../reusable.css';
 import './Question.css';
 
@@ -702,7 +703,7 @@ function Question() {
                                     )}
                                 </div>
                             ) : (
-                                <div className="ql-editor" dangerouslySetInnerHTML={{ __html: thisQuestion?.question }} />
+                                <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(thisQuestion?.question) }} />
                             )}
 
                             {thisQuestion?.typeOfAnswer === 'Essay' && (
@@ -848,7 +849,7 @@ function Question() {
                         {questionList.map(item => (
                             <div key={item._id} className='question-form-body form-body-list'>
                                 {item.questionPic && <div className='d-flex question-img'><img src={item.questionPic} alt="Pocket question" /></div>}
-                                <div className="ql-editor" dangerouslySetInnerHTML={{ __html: item.question }} />
+                                <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.question) }} />
                                 <div onClick={() => removeFromPocket(item._id)} className='remove-question'><i className='fa fa-trash' aria-hidden='true'></i></div>
                             </div>
                         ))}
