@@ -368,7 +368,7 @@ function TeacherDashboard() {
                                     {item?.questionPic ? <div className='d-flex question-img justify-content-center align-items-center'>
                                         <img src={item?.questionPic} alt="" />
                                     </div> : null}
-<div className="question-html" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(item?.question || '', { ALLOWED_TAGS: ['p','b','strong','i','em','u','br','ul','ol','li','span'] }).replace(/&nbsp;/g, ' ')}} />
+<div className="question-html ql-editor" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(item?.question || '', { ALLOWED_TAGS: ['p', 'b', 'strong', 'i', 'em', 'u', 'br', 'ul', 'ol', 'li', 'span', 'img', 'h1', 'h2', 'h3', 'blockquote'], ALLOWED_ATTR: ['src', 'alt', 'style', 'class', 'width', 'height'] }).replace(/&nbsp;/g, ' ')}} />
                                     <div onClick={() => removeFromPocket(item._id)} className="remove-question">
                                         <i className="fa fa-trash" aria-hidden="true"></i>
                                     </div>
