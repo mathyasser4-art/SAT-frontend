@@ -695,7 +695,17 @@ function Question() {
                                     )}
                                 </div>
                             ) : (
-                                <pre>{thisQuestion?.question}</pre>
+                                <div
+                                    className="question-html ql-editor"
+                                    dangerouslySetInnerHTML={{
+                                        __html: DOMPurify
+                                            .sanitize(thisQuestion?.question || '', {
+                                                ALLOWED_TAGS: ['p', 'b', 'strong', 'i', 'em', 'u', 'br', 'ul', 'ol', 'li', 'span', 'img', 'h1', 'h2', 'h3', 'blockquote'],
+                                                ALLOWED_ATTR: ['src', 'alt', 'style', 'class', 'width', 'height']
+                                            })
+                                            .replace(/&nbsp;/g, ' ')
+                                    }}
+                                />
                             )}
 
                             {thisQuestion?.typeOfAnswer === 'Essay' && (
