@@ -1,0 +1,493 @@
+@font-face {
+  font-family: 'Comic Jungle';
+  src: url('../../fonts/Happy\ School.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.pricing-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fdfdfd 0%, #dfbcbc 50%, #a1c4fd 100%);
+  padding-bottom: 4rem;
+}
+
+.pricing-header {
+  text-align: center;
+  padding: 3rem 2rem 2rem;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pricing-title {
+  font-family: 'Comic Jungle', 'Comic Sans MS', cursive;
+  font-size: 3.5rem;
+  font-weight: 900;
+  background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  text-shadow: 4px 4px 0px rgba(255, 215, 0, 0.2);
+  animation: titleBounce 2s ease-in-out infinite;
+}
+
+@keyframes titleBounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.pricing-subtitle {
+  font-size: 1.4rem;
+  color: #555;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.pricing-cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  background: white;
+  border-radius: 30px;
+  padding: 2.5rem;
+  width: 380px;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 5px solid var(--card-color);
+  animation: cardFloat 3s ease-in-out infinite;
+}
+
+@keyframes cardFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.pricing-card:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.pricing-card.popular {
+  border-width: 6px;
+  transform: scale(1.08);
+}
+
+.pricing-card.popular:hover {
+  transform: translateY(-15px) scale(1.12);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  color: white;
+  padding: 8px 24px;
+  border-radius: 25px;
+  font-weight: 900;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 15px rgba(255, 165, 0, 0.5);
+  animation: badgePulse 2s ease-in-out infinite;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+@keyframes badgePulse {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.1); }
+}
+
+.pricing-card-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 3px dashed var(--card-color);
+}
+
+.pricing-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: iconSpin 4s ease-in-out infinite;
+}
+
+@keyframes iconSpin {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(-10deg) scale(1.1); }
+  50% { transform: rotate(0deg) scale(1); }
+  75% { transform: rotate(10deg) scale(1.1); }
+}
+
+.pricing-plan-name {
+  font-family: 'Comic Jungle', 'Comic Sans MS', cursive;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--card-color);
+  margin: 0.5rem 0;
+  text-transform: uppercase;
+}
+
+.pricing-amount {
+  margin: 1.5rem 0;
+}
+
+.price {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #333;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.period {
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: 600;
+}
+
+.savings-badge {
+  display: inline-block;
+  background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 10px rgba(255, 107, 107, 0.4);
+  animation: savingsPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes savingsPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  font-size: 1.05rem;
+  color: #444;
+  font-weight: 600;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.feature:hover {
+  background: rgba(78, 205, 196, 0.1);
+  padding-left: 10px;
+  border-radius: 10px;
+}
+
+.feature.highlight {
+  background: linear-gradient(45deg, rgba(255, 107, 107, 0.2), rgba(255, 230, 109, 0.2));
+  padding: 1rem;
+  border-radius: 10px;
+  font-weight: 800;
+  color: #FF6B6B;
+  border: 2px dashed #FF6B6B;
+}
+
+.checkmark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(45deg, #4ECDC4, #45B7D1);
+  color: white;
+  border-radius: 50%;
+  margin-right: 1rem;
+  font-weight: 900;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(78, 205, 196, 0.4);
+}
+
+.pricing-card-footer {
+  margin-top: 2rem;
+}
+
+.pricing-btn {
+  display: block;
+  width: 100%;
+  padding: 1.2rem;
+  background: linear-gradient(45deg, var(--card-color), var(--card-color));
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 900;
+  font-size: 1.2rem;
+  font-family: 'Comic Sans MS', cursive;
+  border: 4px solid white;
+  box-shadow: 0 8px 0px rgba(0, 0, 0, 0.2), 
+              0 15px 25px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 0px rgba(0, 0, 0, 0.2), 
+              0 20px 30px rgba(0, 0, 0, 0.4);
+}
+
+.pricing-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 4px 0px rgba(0, 0, 0, 0.2), 
+              0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.enterprise-btn {
+  background: linear-gradient(45deg, #FFD93D, #FFA500);
+}
+
+.pricing-faq {
+  max-width: 1200px;
+  margin: 4rem auto 2rem;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-faq h2 {
+  font-family: 'Comic Jungle', 'Comic Sans MS', cursive;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #FF6B6B;
+  margin-bottom: 2rem;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.faq-item {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 20px;
+  border-left: 5px solid #4ECDC4;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.faq-item h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 0.8rem;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.faq-item p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.pricing-cta {
+  text-align: center;
+  padding: 3rem 2rem;
+  margin-top: 3rem;
+}
+
+.pricing-cta h2 {
+  font-family: 'Comic Jungle', 'Comic Sans MS', cursive;
+  font-size: 2.8rem;
+  color: #333;
+  margin-bottom: 2rem;
+  background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1.5rem 3rem;
+  background: linear-gradient(45deg, #FF6B6B, #FFE66D, #4ECDC4, #45B7D1);
+  background-size: 400%;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 900;
+  font-size: 1.5rem;
+  font-family: 'Comic Sans MS', cursive;
+  border: 5px solid white;
+  box-shadow: 0 10px 0px rgba(0, 0, 0, 0.2), 
+              0 20px 30px rgba(0, 0, 0, 0.3);
+  animation: ctaPulse 3s ease-in-out infinite;
+  transition: all 0.3s ease;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes ctaPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.cta-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 0px rgba(0, 0, 0, 0.2), 
+              0 25px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 1200px) {
+  .pricing-cards-container {
+    max-width: 900px;
+  }
+  
+  .pricing-card {
+    width: 340px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .pricing-title {
+    font-size: 2.8rem;
+  }
+  
+  .pricing-cards-container {
+    gap: 1.5rem;
+  }
+  
+  .pricing-card {
+    width: 320px;
+  }
+  
+  .pricing-card.popular {
+    transform: scale(1);
+  }
+  
+  .pricing-card.popular:hover {
+    transform: translateY(-15px) scale(1.03);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .pricing-header {
+    padding: 2rem 1rem 1.5rem;
+  }
+  
+  .pricing-title {
+    font-size: 2.2rem;
+  }
+  
+  .pricing-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .pricing-cards-container {
+    padding: 1rem;
+    gap: 2rem;
+  }
+  
+  .pricing-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+  }
+  
+  .pricing-faq {
+    padding: 2rem 1rem;
+  }
+  
+  .pricing-faq h2 {
+    font-size: 2rem;
+  }
+  
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pricing-cta h2 {
+    font-size: 2.2rem;
+  }
+  
+  .cta-button {
+    font-size: 1.3rem;
+    padding: 1.2rem 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .pricing-title {
+    font-size: 1.8rem;
+  }
+  
+  .pricing-subtitle {
+    font-size: 1rem;
+  }
+  
+  .pricing-card {
+    padding: 1.5rem;
+  }
+  
+  .pricing-icon {
+    font-size: 3rem;
+  }
+  
+  .pricing-plan-name {
+    font-size: 1.6rem;
+  }
+  
+  .price {
+    font-size: 2.8rem;
+  }
+  
+  .period {
+    font-size: 1rem;
+  }
+  
+  .feature {
+    font-size: 0.95rem;
+  }
+  
+  .pricing-btn {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+  
+  .pricing-cta h2 {
+    font-size: 1.8rem;
+  }
+  
+  .cta-button {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+  }
+}

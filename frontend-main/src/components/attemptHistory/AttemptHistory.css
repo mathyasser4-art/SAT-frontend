@@ -1,0 +1,266 @@
+.attempt-history-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    padding: 20px;
+}
+
+.attempt-history-content {
+    background: white;
+    border-radius: 16px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.attempt-history-header {
+    padding: 24px;
+    border-bottom: 2px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1;
+}
+
+.attempt-history-header h2 {
+    margin: 0;
+    color: #1f2937;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: #6b7280;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.close-btn:hover {
+    background: #f3f4f6;
+    color: #1f2937;
+}
+
+.statistics-section {
+    padding: 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+    background: #f9fafb;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.stat-card {
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.stat-value.highlight-green {
+    color: #059669;
+}
+
+.stat-value.highlight-blue {
+    color: #0284c7;
+}
+
+.attempts-list {
+    padding: 24px;
+}
+
+.attempts-list h3 {
+    margin: 0 0 16px 0;
+    color: #1f2937;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.no-attempts {
+    text-align: center;
+    padding: 40px;
+    color: #6b7280;
+}
+
+.attempts-table {
+    overflow-x: auto;
+}
+
+.attempts-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.attempts-table thead {
+    background: #f9fafb;
+}
+
+.attempts-table th {
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.attempts-table tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+    transition: background 0.2s;
+}
+
+.attempts-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+.attempts-table tbody tr.current-attempt {
+    background: #dbeafe;
+}
+
+.attempts-table tbody tr.current-attempt:hover {
+    background: #bfdbfe;
+}
+
+.attempts-table td {
+    padding: 16px;
+    color: #374151;
+}
+
+.attempt-number {
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 16px;
+}
+
+.current-badge {
+    margin-left: 8px;
+    padding: 2px 8px;
+    background: #0284c7;
+    color: white;
+    font-size: 11px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.score {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.score.completed-score {
+    color: #059669;
+}
+
+.score.in-progress-score {
+    color: #9ca3af;
+}
+
+.date-cell {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.attempt-history-footer {
+    padding: 24px;
+    border-top: 2px solid #e5e7eb;
+    display: flex;
+    justify-content: center;
+    background: #f9fafb;
+}
+
+.attempt-history-footer .button {
+    padding: 12px 32px;
+    background: #0284c7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.attempt-history-footer .button:hover {
+    background: #0369a1;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+}
+
+.loading,
+.error-message {
+    padding: 40px;
+    text-align: center;
+    color: #6b7280;
+}
+
+.error-message {
+    color: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .attempt-history-content {
+        max-height: 100vh;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    .statistics-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-value {
+        font-size: 20px;
+    }
+
+    .attempts-table {
+        font-size: 14px;
+    }
+
+    .attempts-table th,
+    .attempts-table td {
+        padding: 8px 12px;
+    }
+}

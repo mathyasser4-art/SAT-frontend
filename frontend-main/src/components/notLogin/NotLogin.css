@@ -1,0 +1,52 @@
+.not-login{
+    height: 80vh;
+}
+
+.not-login p{
+    font-size: 20px;
+    width: 300px;
+    text-align: center;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.not-login-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 20px;
+    text-align: center;
+    width: 180px;
+    color: rgba(255, 255, 255, 0.9);
+    border-radius: 50px;
+    background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+    background-size: 600%;
+    -webkit-animation: anime 16s linear infinite;
+    animation: anime 16s linear infinite;
+}
+
+@-webkit-keyframes anime {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes anime {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

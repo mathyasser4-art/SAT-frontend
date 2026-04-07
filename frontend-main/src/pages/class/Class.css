@@ -1,0 +1,348 @@
+.class-container {
+    padding: 0rem 2.2rem;
+    padding-bottom: 6.5rem;
+}
+
+.class-header {
+    padding: 0.65rem 0.8rem;
+    background-color: #5d17eb;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+}
+
+.class-header p {
+    margin-right: 0.5rem;
+}
+
+.class-header p:first-child {
+    padding: 0.75rem 1rem;
+    background-color: #fff;
+    color: #5d17eb;
+    border-radius: 50%;
+}
+
+.class-item {
+    background-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
+    padding: 1rem 0.8rem;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+}
+
+.class-item p {
+    font-size: 17px;
+}
+
+.class-icon i {
+    font-size: 20px;
+    margin-right: 0.4rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    background-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 15px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.class-icon i:first-child {
+    color: blue;
+}
+
+.class-icon i:nth-child(2) {
+    color: #5d17eb;
+}
+
+.class-icon:last-child {
+    color: red;
+}
+
+.dropbtn {
+    background-color: #5d17eb;
+    color: white;
+    padding: 0.4em 0.5em;
+    padding-top: 0.6em;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 143px;
+    left: -85px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.dropdown-content p {
+    color: black;
+    padding: 12px 14.5px;
+    padding-right: 0px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content p:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #5325af;
+}
+
+.update-class-popup,
+.add-class-popup,
+.remove-class-popup,
+.add-to-class-popup {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(5, 5, 5, 0.5);
+    transition: 0.5s;
+}
+
+.class-popup-hide {
+    background-color: transparent !important;
+    transition: 0.5s;
+}
+
+.update-class-container,
+.add-class-container,
+.remove-class-container,
+.add-to-class-container {
+    position: absolute;
+    background-color: #fff;
+    width: 40%;
+    padding: 1rem;
+    border-radius: 10px;
+    top: 120px;
+    overflow-y: scroll;
+    max-height: 80vh;
+    transition: 0.7s;
+}
+
+.student-list-container,
+.teacher-list-container {
+    max-height: 70vh;
+    position: relative;
+    top: -50px;
+}
+
+.class-top {
+    top: -1200px;
+    transition: 0.7s;
+}
+
+.remove-popup-body,
+.add-to-popup-body {
+    padding: 0.8rem 0rem;
+}
+
+.remove-popup-body p {
+    font-size: 19px;
+}
+
+.student-item {
+    background-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.01), 0 6px 15px 0 rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+}
+
+.student-item p {
+    font-size: 17px;
+}
+
+.student-item i {
+    font-size: 20px;
+    color: #ff3131;
+    cursor: pointer;
+}
+
+.front-layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(5, 5, 5, 0.8);
+}
+
+/* loader */
+.loader-percentage {
+    display: block;
+    position: relative;
+    height: 32px;
+    width: 200px;
+    background: #fff;
+    border: 2px solid #fff;
+    color: red;
+    overflow: hidden;
+}
+
+.loader-percentage::before {
+    content: '';
+    background: red;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    animation: loading 10s linear infinite;
+}
+
+.loader-percentage:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 24px;
+    line-height: 32px;
+    color: rgb(0, 255, 255);
+    mix-blend-mode: difference;
+    animation: percentage 10s linear infinite;
+}
+
+@keyframes loading {
+    0% {
+        width: 0
+    }
+
+    100% {
+        width: 100%
+    }
+}
+
+@keyframes percentage {
+    0% {
+        content: "0%"
+    }
+
+    5% {
+        content: "5%"
+    }
+
+    10% {
+        content: "10%"
+    }
+
+    20% {
+        content: "20%"
+    }
+
+    30% {
+        content: "30%"
+    }
+
+    40% {
+        content: "40%"
+    }
+
+    50% {
+        content: "50%"
+    }
+
+    60% {
+        content: "60%"
+    }
+
+    70% {
+        content: "70%"
+    }
+
+    80% {
+        content: "80%"
+    }
+
+    90% {
+        content: "90%"
+    }
+
+    95% {
+        content: "95%"
+    }
+
+    96% {
+        content: "96%"
+    }
+
+    97% {
+        content: "97%"
+    }
+
+    98% {
+        content: "98%"
+    }
+
+    99% {
+        content: "99%"
+    }
+
+    100% {
+        content: "100%"
+    }
+}
+/* loader */
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+    .update-class-container,
+    .add-class-container,
+    .remove-class-container,
+    .add-to-class-container {
+        width: 50%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    .class-container {
+        padding: 0rem 1.2rem;
+        padding-bottom: 6.5rem;
+    }
+
+    .update-class-container,
+    .add-class-container,
+    .remove-class-container,
+    .add-to-class-container {
+        width: 70%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+    .class-container {
+        padding: 0rem 1rem;
+        padding-bottom: 6.5rem;
+    }
+
+    .update-class-container,
+    .add-class-container,
+    .remove-class-container,
+    .add-to-class-container {
+        width: 95%;
+    }
+}

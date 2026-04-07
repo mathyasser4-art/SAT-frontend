@@ -1,0 +1,103 @@
+.user-container{
+    padding-bottom: 6.5rem;
+}
+
+.profile-avataer img {
+    width: 150px;
+}
+
+.user-name {
+    text-align: center;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.user-name h2 {
+    margin: 0;
+}
+
+.user-name p {
+    color: rgb(86, 85, 85);
+    font-size: 15px;
+}
+
+.user-info {
+    background-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
+    padding: 1.3rem 0rem;
+    padding-right: 1rem;
+    margin-top: 1.5rem;
+    width: 350px;
+    border-radius: 10px;
+}
+
+.info {
+    margin-bottom: 0.7rem;
+    border-bottom: 1px solid rgb(195, 194, 194);
+    padding: 1rem 0rem;
+    color: rgb(56, 55, 55);
+}
+
+.info i {
+    margin-right: 0.5rem;
+    font-size: 18px;
+}
+
+.info p {
+    font-size: 18px;
+}
+
+.info:last-child {
+    border: 0px;
+    margin-bottom: 0;
+}
+
+.user-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    width: 320px;
+    margin-top: 2.5rem;
+    border-radius: 50px;
+    background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+    background-size: 600%;
+    -webkit-animation: anime 16s linear infinite;
+    animation: anime 16s linear infinite;
+    cursor: pointer;
+}
+
+@-webkit-keyframes anime {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes anime {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.user-footer{
+    text-align: center;
+    color: rgb(86, 85, 85);
+    font-size: 15px;
+    margin-top: 0.8rem;
+}

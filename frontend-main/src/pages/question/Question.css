@@ -1,0 +1,2235 @@
+body {
+    background-image: url('../../img/webbackground10.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.nav-container {
+    padding: 1rem 2rem;
+}
+
+.nav-container img {
+    width: 218px;
+}
+
+.nav-right-side img {
+    width: 55px !important;
+}
+
+.nav-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 22px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    border-radius: 50px;
+    background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+    background-size: 600%;
+    -webkit-animation: anime 16s linear infinite;
+    animation: anime 16s linear infinite;
+}
+
+@-webkit-keyframes anime {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes anime {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.question-container {
+    padding: 0.5rem 1rem;
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+}
+
+.question-content-wrapper {
+    width: 100%;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.question-number {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.question-number p {
+    padding: 0.8rem 1rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #7ED7C1;
+    border-radius: 12px;
+}
+
+.active-question {
+    color: #ffffff;
+    background-color: #65C6EE;
+    font-weight: bold;
+}
+
+/* Answered question indicator - shown before results (blue) */
+.question-number p.has-answer {
+    background-color: #3B82F6;
+    color: #ffffff;
+    border-color: #3B82F6;
+    font-weight: 600;
+}
+
+
+
+.question-end-btn button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.question-end-btn button .loader {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.question-form {
+    background-color: #fff;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1), 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+    
+    /* NO SCROLLING - fit content */
+    width: 45%;
+    min-height: auto;
+    max-height: none;
+    overflow: visible;
+    
+    padding: 0.8rem 1rem;
+    border-radius: 25px;
+    
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    flex-shrink: 0;
+}
+
+.question-form-head {
+    border-bottom: 1px solid #7ED7C1;
+    padding-bottom: 0.6rem;
+}
+
+.question-form-head p {
+    font-size: 20px;
+    color: #3B728D;
+    font-weight: 600;
+}
+
+.end-head p {
+    font-size: 14px;
+    color: #559367;
+}
+
+.end-head span {
+    width: 1px;
+    height: 20px;
+    background-color: #7ED7C1;
+    margin: 0rem 0.3rem;
+}
+
+.end-head i {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Fullscreen Button */
+.fullscreen-button {
+    cursor: pointer;
+    padding: 8px 12px;
+    background-color: #4C5287;
+    border-radius: 8px;
+    margin-right: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fullscreen-button:hover {
+    background-color: #3a4070;
+    transform: scale(1.05);
+}
+
+@media only screen and (max-width: 600px) {
+    .fullscreen-button {
+        padding: 6px 10px;
+        margin-right: 4px;
+    }
+}
+
+/* Flash Mode Button */
+.flash-mode-button {
+    cursor: pointer;
+    padding: 8px 12px;
+    background-color: #FF9800;
+    border-radius: 8px;
+    margin-right: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flash-mode-button:hover {
+    background-color: #F57C00;
+    transform: scale(1.05);
+}
+
+.flash-mode-button.flash-active {
+    background-color: #4CAF50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.flash-mode-button i {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+/* Flash Speed Control */
+.flash-speed-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 12px;
+    font-size: 14px;
+}
+
+.flash-speed-control label {
+    font-weight: 500;
+    color: #333;
+    white-space: nowrap;
+}
+
+.flash-speed-control select {
+    padding: 6px 10px;
+    border: 2px solid #FF9800;
+    border-radius: 6px;
+    background: white;
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.flash-speed-control select:hover {
+    border-color: #F57C00;
+    box-shadow: 0 2px 8px rgba(255, 152, 0, 0.2);
+}
+
+.flash-speed-control select:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+/* Abacus Button Styling */
+.abacus-button {
+    cursor: pointer;
+    padding: 8px 12px;
+    background-color: #65C6EE;
+    border-radius: 8px;
+    margin-right: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.abacus-button:hover {
+    background-color: #4BB5DD;
+    transform: scale(1.05);
+}
+
+.abacus-button i {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.question-form-body {
+    padding-bottom: 0.3rem;
+    padding-top: 0.3rem;
+}
+
+.question-img {
+    margin: 0.5rem 0rem;
+}
+
+.question-img img {
+    width: 75%;
+    max-height: 150px;
+    object-fit: contain;
+}
+
+.question-form-body pre,
+.floating-question pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Spicy Sale', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    font-size: 28px;
+    line-height: 34px;
+    color: #7935d1ff;
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+}
+
+/* Flash Mode Styles */
+.flash-mode-question {
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(101, 198, 238, 0.1) 0%, rgba(121, 53, 209, 0.1) 100%);
+    border-radius: 12px;
+    margin: 1rem 0;
+}
+
+.flash-line {
+    font-size: 90px;
+    font-weight: bold;
+    color: #7935d1ff;
+    animation: flashIn 0.3s ease-in;
+    text-align: center;
+    white-space: pre;
+    font-family: 'Spicy Sale', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    line-height: 1.1;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flash-line.flash-fade-out {
+    animation: flashOut 1.5s ease-out forwards;
+}
+
+@keyframes flashIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes flashOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    70% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+
+/* Answer Text After Flash */
+.flash-answer-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #F875AA;
+    text-align: center;
+    animation: answerPulse 1s ease-in-out infinite;
+    font-family: 'Spicy Sale', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+}
+
+@keyframes answerPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+}
+
+.start-flash-btn {
+    padding: 1.2rem 2.5rem;
+    font-size: 24px;
+    background-color: #65C6EE;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(101, 198, 238, 0.3);
+}
+
+.start-flash-btn:hover:not(:disabled) {
+    background-color: #4BB5DD;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(101, 198, 238, 0.4);
+}
+
+.start-flash-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* MCQ CHOICES CONTAINER - BESIDE QUESTION BOX */
+.mcq-container {
+    width: 50%;
+    margin-top: 1.5rem;
+    flex-shrink: 0;
+}
+
+.mcq-title {
+    font-size: 18px;
+    color: #3B728D;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.mcq-answer-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* COLORFUL MCQ CHOICES */
+.mcq-choice {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.2rem;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 3px solid transparent;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+.mcq-choice::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mcq-choice:hover::before {
+    opacity: 1;
+}
+
+.mcq-choice:hover {
+    transform: translateX(5px) scale(1.02);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.mcq-choice:active {
+    transform: translateX(3px) scale(0.98);
+}
+
+.mcq-choice:nth-child(1) {
+    background: linear-gradient(135deg, #FF6B9D, #FFA07A);
+    color: #fff;
+}
+
+.mcq-choice:nth-child(2) {
+    background: linear-gradient(135deg, #4FACFE, #00F2FE);
+    color: #fff;
+}
+
+.mcq-choice:nth-child(3) {
+    background: linear-gradient(135deg, #43E97B, #38F9D7);
+    color: #fff;
+}
+
+.mcq-choice:nth-child(4) {
+    background: linear-gradient(135deg, #FA709A, #FEE140);
+    color: #fff;
+}
+
+.mcq-choice:nth-child(5) {
+    background: linear-gradient(135deg, #A8EDEA, #FED6E3);
+    color: #333;
+}
+
+.mcq-choice:nth-child(6) {
+    background: linear-gradient(135deg, #D299C2, #FEF9D7);
+    color: #333;
+}
+
+.mcq-choice input[type="radio"] {
+    width: 1.3em;
+    height: 1.3em;
+    margin-right: 1rem;
+    cursor: pointer;
+    accent-color: #fff;
+    flex-shrink: 0;
+}
+
+.mcq-choice .mcq-text {
+    flex: 1;
+    line-height: 1.5;
+}
+
+.mcq-choice.selected {
+    border-color: #4C5287;
+    transform: translateX(8px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(76, 82, 135, 0.3);
+}
+
+.mcq-choice.selected::after {
+    content: '👆';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    animation: checkmark 0.3s ease;
+}
+
+@keyframes checkmark {
+    0% {
+        transform: translateY(-50%) scale(0);
+    }
+    50% {
+        transform: translateY(-50%) scale(1.2);
+    }
+    100% {
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+.mcq-error {
+    margin-top: 1rem;
+    color: #F875AA;
+    font-weight: 500;
+}
+
+/* Graph Answer Styles */
+.graph-container {
+    width: 55%;
+}
+
+.graph-answer-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.graph-choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3px solid #E0E0E0;
+    background: #fff;
+    position: relative;
+}
+
+.graph-choice:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    border-color: #65C6EE;
+}
+
+.graph-choice input[type="radio"] {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 1.2em;
+    height: 1.2em;
+    cursor: pointer;
+    accent-color: #65C6EE;
+}
+
+.graph-choice img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+.graph-choice.selected {
+    border-color: #4C5287;
+    background: linear-gradient(135deg, #E3F2FD, #F3E5F5);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(76, 82, 135, 0.3);
+}
+
+.graph-choice.selected::after {
+    content: '👆';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.floating-question {
+    background-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
+    width: 42%;
+    max-width: 600px;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    z-index: 99999999;
+}
+
+.close-floating-question {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+    padding: 0.1rem 0.6rem;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.math-keyboard {
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+    margin-top: 1rem;
+}
+
+@media only screen and (min-width: 993px) {
+    .math-keyboard {
+        position: fixed;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: initial;
+        margin-top: 0;
+        max-width: 320px;
+        z-index: 100;
+    }
+    
+    .question-form-body pre {
+        font-size: 28px !important;
+        line-height: 34px !important;
+    }
+    
+    /* Grid layout for keyboard - 4 columns, 3 rows of digits */
+.keyboard-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+}
+    
+    /* Next button spans full width */
+    .keyboard-next-btn {
+        grid-column: 1 / -1;
+        margin-top: 5px !important;
+    }
+    
+    /* Override the 50px fixed button sizes for desktop */
+    .math-keyboard .digit-button {
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 50px !important;
+        max-height: 50px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 22px !important;
+        box-shadow: 0 4px 0 0 #545b64 !important;
+        border-radius: 10px !important;
+    }
+    
+    /* Number buttons (0-9) - Blue/Purple color */
+    .math-keyboard .digit-num {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        color: white !important;
+        box-shadow: 0 4px 0 0 #4c5287 !important;
+    }
+    
+    .math-keyboard .digit-num:hover {
+        background: linear-gradient(135deg, #7c8ef5 0%, #8a5cb8 100%) !important;
+    }
+    
+    /* Action buttons (× and 123) - Orange/Red color */
+    .math-keyboard .digit-action {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%) !important;
+        color: white !important;
+        box-shadow: 0 4px 0 0 #c44545 !important;
+    }
+    
+    .math-keyboard .digit-action:hover {
+        background: linear-gradient(135deg, #ff8080 0%, #ffa070 100%) !important;
+    }
+    
+    /* Next button (arrow) - Green color */
+    .math-keyboard .digit-next {
+        background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%) !important;
+        color: white !important;
+        box-shadow: 0 4px 0 0 #2e7d32 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .math-keyboard .digit-next:hover {
+        background: linear-gradient(135deg, #66BB6A 0%, #5cb860 100%) !important;
+    }
+    
+    .math-keyboard .digit-button:active {
+        transform: scale(0.95) !important;
+        box-shadow: none !important;
+    }
+    
+    .math-keyboard .digit-button:hover {
+        opacity: 0.9;
+    }
+    
+    .math-keyboard .toggle-btn {
+        font-size: 18px !important;
+        min-height: 50px !important;
+        max-height: 50px !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-radius: 10px !important;
+    }
+    
+    .math-keyboard .keyboard-next-btn {
+        min-height: 50px !important;
+        font-size: 16px !important;
+    }
+}
+
+.math-keyboard p {
+    color: #4C5287;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.mcq-answer .react-math-keyboard-toolbar-container,
+.mcq-answer .react-math-keyboard-numeric-layout {
+    display: none;
+}
+
+.mcq-answer .react-math-keyboard-input {
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+.mcq-answer .mq-text-mode {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif !important;
+    font-size: 16px;
+    color: #4C5287;
+    margin-bottom: 0.34rem;
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+    line-height: 1.5rem !important;
+}
+
+.mcq-answer-layout {
+    position: relative;
+}
+
+.answer-layout {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.graph-answer img {
+    width: 90%;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: 1.3em;
+    height: 1.3em;
+    margin-right: 0.65rem;
+}
+
+.question-form-btn,
+.question-footer-btn button,
+.question-end-btn button {
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    color: #fff;
+    background-color: #65C6EE;
+    border: 0;
+    font-size: 18px;
+    font-weight: 540;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.question-end-btn button{
+    background-color: #F875AA;
+}
+
+.question-form-btn {
+    width: 90px;
+    padding: 0rem 1.2rem !important;
+    height: 45px;
+    margin-top: 5px !important;
+}
+
+.question-form-footer p {
+    margin-top: 0.5rem;
+    font-size: 14px;
+}
+
+.question-sign div {
+    width: 45px;
+    height: 45px;
+    border: 1px solid #7ED7C1;
+    border-radius: 50%;
+    margin-right: 0.4rem;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 0.4rem;
+}
+
+.sign1 p {
+    color: #559367;
+    margin-bottom: 0.5rem;
+    font-size: 14px;
+}
+
+.sign2 p {
+    color: #F875AA;
+    margin-bottom: 0.5rem;
+    font-size: 14px;
+}
+
+.question-footer-btn button {
+    padding: 0.6rem 0rem;
+    color: #fff;
+    background-color: #F875AA;
+    width: 120px;
+    font-size: 18px;
+}
+
+.question-end-btn button {
+    width: 200px;
+    font-size: 18px;
+}
+
+.question-end-btn {
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Rest of your existing CSS remains the same */
+.alert-question,
+.alert-question-end,
+.alert-question-error-pocket {
+    background-color: #F875AA;
+    color: #fff;
+    width: 180px;
+    padding: 1.2rem 0.5rem;
+    top: -250px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.alert-question-end,
+.alert-question-error-pocket {
+    width: 320px;
+    top: -250px;
+}
+
+.model-answer-popup,
+.result-popup,
+.question-list-popup {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(5, 5, 5, 0.5);
+    transition: 0.5s;
+    z-index: 1000;
+}
+
+.answer-popup-hide,
+.result-popup-hide {
+    background-color: transparent !important;
+    transition: 0.5s;
+}
+
+.popup-container,
+.result-popup-container,
+.question-list-container {
+    position: absolute;
+    background-color: #fff;
+    width: 60%;
+    max-width: 800px;
+    padding: 1.5rem;
+    border-radius: 20px;
+    top: 120px;
+    overflow-y: auto;
+    max-height: 80vh;
+    transition: 0.7s;
+    z-index: 1001;
+}
+
+.question-list-container {
+    width: 55%;
+}
+
+.result-popup-container {
+    padding: 1.2rem 2rem;
+}
+
+.popup-top {
+    top: -1200px;
+    transition: 0.7s;
+}
+
+.popup-head {
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid #7ED7C1;
+}
+
+.popup-head p {
+    color: #559367;
+    font-size: 25px;
+}
+
+.popup-body {
+    padding: 0.8rem 0rem;
+}
+
+.popup-body img {
+    width: 90%;
+    margin-inline: auto;
+}
+
+.popup-body p {
+    font-size: 25px;
+}
+
+.popup-body img {
+    margin-top: 0.5rem;
+}
+
+.popup-btn {
+    background-color: #F875AA;
+}
+
+.result-popup-head img {
+    width: 250px;
+}
+
+.result-popup-head p {
+    text-align: center;
+    margin: 1rem 0rem;
+    font-size: 25px;
+    color: #559367;
+}
+
+.result-popup-body table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    margin: 1.2rem 0rem;
+    border-radius: 5px;
+    border-style: hidden;
+    box-shadow: 0 0 0 1px #7ED7C1;
+}
+
+.result-popup-body th,
+.result-popup-body td {
+    border: 1px solid #7ED7C1;
+}
+
+.result-popup-body th {
+    padding: 0.5rem 0.5rem;
+    font-size: 20px;
+    font-weight: 450;
+}
+
+.result-popup-body td {
+    padding: 0.5rem 0.2rem;
+    font-size: 18px;
+}
+
+.whiteboard {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    border-left: 1px solid #CDD7DE;
+}
+
+.close,
+.close-whiteboard-img {
+    z-index: -99999999 !important;
+    opacity: 0 !important;
+}
+
+.whiteboard-color div {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 15px !important;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.red {
+    background-color: #F875AA;
+    right: 15px;
+}
+
+.black {
+    background-color: #4C5287;
+    right: 57px;
+}
+
+.blue {
+    background-color: #65C6EE;
+    right: 100px;
+}
+
+.close-whiteboard {
+    position: absolute;
+    top: 10px;
+    right: 47%;
+    cursor: pointer;
+}
+
+.whiteboard-modify {
+    position: absolute;
+    top: 12px;
+    right: 150px;
+}
+
+.whiteboard-modify i {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.whiteboard-modify button {
+    font-size: 20px;
+    background-color: #fff;
+    padding: 0.5rem 1rem;
+    border: 1px solid #F875AA;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.close-whiteboard p {
+    font-size: 35px;
+}
+
+.whiteboard-img-container {
+    position: absolute;
+    width: 50%;
+    right: 0px;
+    top: 80px;
+}
+
+.whiteboard-img img {
+    width: 75%;
+}
+
+.whiteboard-img {
+    width: 100%;
+    position: relative;
+}
+
+.canva2-container {
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.canva2-container-height {
+    height: 100% !important;
+}
+
+.canva2 {
+    background-color: transparent !important;
+}
+
+.question-pocket {
+    position: fixed;
+    left: 30px;
+    bottom: 40px;
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 15px 0 rgba(0, 0, 0, 0.10);
+    border-radius: 50%;
+    font-size: 2.4rem;
+    color: #F875AA;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.hide-question-pocket {
+    display: none !important;
+}
+
+.pocket-number {
+    position: absolute;
+    width: 25px;
+    height: 24px;
+    background-color: #F875AA;
+    color: #fff;
+    top: 0;
+    right: 0;
+    font-size: 13px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.add-question-icon,
+.all-question-icon {
+    margin-right: 0.5rem;
+    color: #F875AA;
+    cursor: pointer;
+}
+
+.all-question-icon {
+    color: #65C6EE;
+    font-size: 23px !important;
+}
+
+.form-body-list {
+    border: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 15px 0 rgba(0, 0, 0, 0.10);
+    padding: 1.1rem 1rem;
+    margin: 1rem 0rem;
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Elevate the question card when keyboard is active */
+.form-body-list:has(.keyboard-container) {
+    z-index: 10;
+}
+
+.question-list-close{
+    cursor: pointer;
+}
+
+.question-list-right-side button{
+    margin-right: 0.5rem;
+    margin-top: 0.2rem;
+    background-color: #F875AA;
+    color: #fff;
+    border: 0px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.timer div {
+    width: 100%;
+}
+
+.timer div:last-child {
+    margin-left: 1rem;
+}
+
+.timer-clock{
+    margin-left: 0px !important;
+}
+
+.timer div p {
+    margin-left: 0.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.timer input {
+    width: 100%;
+    padding: 0.8rem 0.4rem;
+    border-radius: 10px;
+    border: 1px solid #7ED7C1;
+}
+
+.remove-question {
+    position: absolute;
+    top: 30px;
+    right: 15px;
+    font-size: 25px;
+    color: #F875AA;
+    cursor: pointer;
+}
+
+.select-class select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    appearance: none;
+    outline: 10px red;
+    border: 0;
+    box-shadow: none;
+    flex: 1;
+    background-color: #fff;
+    background-image: none;
+    cursor: pointer;
+    font-size: 16.5px;
+}
+
+.select-class {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 2.5em;
+    padding-left: 0.5rem;
+    border-radius: .40em;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 15px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.select-class::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.7em;
+    background-color: #65C6EE;
+    color: #fff;
+    transition: .25s all ease;
+    pointer-events: none;
+}
+
+.select-container button {
+    width: 55px;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 0.4rem;
+    background-color: #65C6EE;
+    color: #fff;
+    border: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.class-selector {
+    position: relative;
+    margin-right: 0.6rem;
+    padding: 0.6rem 1rem;
+    background-color: #65C6EE;
+    color: #fff;
+    border-radius: 6px;
+}
+
+.class-selector div {
+    position: absolute;
+    top: -2px;
+    right: 3px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.date-faild {
+    margin-top: 0.5rem;
+}
+
+.assignment-title input {
+    width: 100%;
+    padding: 0.8rem 0.4rem;
+    border-radius: 10px;
+    border: 1px solid #7ED7C1;
+    margin-bottom: 0.3rem;
+}
+
+.assignment-title p {
+    margin-bottom: 0.5rem;
+}
+
+.plane {
+    margin-right: 0.5rem;
+}
+
+/* Math Keyboard Buttons */
+.digit-button {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 0 0 #545b64;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  background-color: #6c757d;
+}
+
+.digit-button:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 0 #545b64;
+}
+
+/* Responsive Design */
+
+/* Extra Large Screens */
+@media only screen and (min-width: 1400px) {
+    .question-container {
+        width: 75%;
+        max-width: 1600px;
+    }
+    
+    .question-form {
+        width: 45%;
+    }
+    
+    .mcq-container {
+        width: 35%;
+    }
+}
+
+/* Large Screens */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+    .question-container {
+        width: 80%;
+    }
+}
+
+/* Tablet Landscape and Medium Screens */
+@media only screen and (max-width: 992px) {
+    .nav-container {
+        padding: 1rem 1.5rem;
+    }
+    
+    .nav-container img {
+        width: 180px;
+    }
+
+    .question-container {
+        width: 90%;
+        flex-direction: column;
+    }
+    
+    .question-content-wrapper {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .question-form {
+        width: 100%;
+        min-height: 35vh;
+        max-height: 50vh;
+    }
+
+    .mcq-container,
+    .graph-container {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 1rem;
+    }
+    
+    .mcq-answer-layout {
+        gap: 0.8rem;
+    }
+    
+    .mcq-choice {
+        padding: 0.9rem 1rem;
+        font-size: 15px;
+    }
+    
+    .mcq-title {
+        font-size: 17px;
+    }
+
+    .floating-question {
+        width: 65%;
+    }
+
+    .popup-container,
+    .result-popup-container,
+    .question-list-container {
+        width: 75%;
+        padding: 1.2rem;
+    }
+
+    .whiteboard,
+    .whiteboard-img-container {
+        width: 70%;
+    }
+
+    .close-whiteboard {
+        right: 66%;
+    }
+    
+    .question-form-body pre,
+    .floating-question pre {
+        font-size: 18px;
+        line-height: 30px;
+    }
+    
+    .graph-answer-layout {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+/* Tablet Portrait */
+@media only screen and (max-width: 768px) {
+    .nav-container {
+        padding: 1rem 0.7rem;
+    }
+    
+    .nav-container img {
+        width: 160px;
+    }
+    
+    .nav-right-side img {
+        width: 45px !important;
+    }
+
+    .question-container {
+        width: 95%;
+        gap: 1.5rem;
+    }
+
+    .question-form {
+        min-height: 32vh;
+        max-height: 48vh;
+        padding: 0.9rem 1rem;
+    }
+    
+    .question-form-head p {
+        font-size: 18px;
+    }
+    
+    .end-head p {
+        font-size: 13px;
+    }
+
+    .floating-question {
+        width: 80%;
+    }
+
+    .popup-container,
+    .result-popup-container,
+    .question-list-container {
+        width: 85%;
+        padding: 1rem;
+        top: 100px;
+    }
+
+    .result-popup-head p {
+        font-size: 20px;
+    }
+    
+    .result-popup-body th {
+        font-size: 18px;
+        padding: 0.4rem 0.3rem;
+    }
+    
+    .result-popup-body td {
+        font-size: 16px;
+        padding: 0.4rem 0.2rem;
+    }
+
+    .whiteboard,
+    .whiteboard-img-container {
+        width: 85%;
+    }
+
+    .close-whiteboard {
+        right: 80%;
+    }
+    
+    .question-number p {
+        padding: 0.6rem 0.8rem;
+        font-size: 15px;
+    }
+    
+    .mcq-choice {
+        padding: 0.8rem 1rem;
+        font-size: 14px;
+    }
+    
+    .mcq-title {
+        font-size: 16px;
+    }
+    
+    .question-form-btn,
+    .question-footer-btn button,
+    .question-end-btn button {
+        font-size: 16px;
+        padding: 0.5rem 1rem;
+    }
+    
+    .question-form-body pre,
+    .floating-question pre {
+        font-size: 17px;
+        line-height: 28px;
+    }
+    
+    /* Flash Mode Tablet Responsive */
+    .flash-line {
+        font-size: 65px;
+        min-height: 120px;
+        line-height: 1;
+    }
+    
+    .flash-answer-text {
+        font-size: 22px;
+    }
+    
+    .start-flash-btn {
+        font-size: 20px;
+        padding: 1rem 2rem;
+    }
+    
+    .flash-mode-question {
+        min-height: 250px;
+    }
+}
+
+/* Mobile Landscape and Small Tablets */
+@media only screen and (max-width: 600px) {
+    .nav-container img {
+        width: 140px;
+    }
+    
+    .nav-right-side img {
+        width: 40px !important;
+    }
+    
+    .nav-btn {
+        padding: 0.5rem 1.2rem;
+        font-size: 18px;
+    }
+
+    .question-container {
+        gap: 1rem;
+        padding: 0.5rem 0.5rem;
+    }
+
+    /* Keep question form full width */
+    .question-form {
+        width: 100%;
+        padding: 0.8rem 0.9rem;
+        min-height: 30vh;
+        max-height: 45vh;
+        border-radius: 18px;
+    }
+
+    /* Mobile Layout: Question text and keyboard side-by-side INSIDE question-form-body */
+    .question-form-body {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        align-items: flex-start;
+        padding: 0.5rem;
+    }
+
+    .question-form-body pre {
+        flex: 0 0 100px;
+        text-align: right;
+        border-right: 2px solid #4C5287;
+        padding-right: 12px;
+        white-space: pre;
+        margin: 0;
+        font-size: 28px;
+        line-height: 32px;
+    }
+
+    .math-keyboard {
+        flex: 1;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0;
+        position: relative !important;
+        right: auto !important;
+        top: auto !important;
+        transform: none !important;
+        margin-top: 0;
+    }
+
+    .math-keyboard > div {
+        width: 100% !important;
+    }
+    
+    /* Ensure 3-column grid layout for mobile keyboard - smaller size */
+    .keyboard-container {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 4px !important;
+        width: 100% !important;
+    }
+    
+    .question-form-head p {
+        font-size: 17px;
+    }
+    
+    .end-head p {
+        font-size: 12px;
+    }
+    
+    .end-head i {
+        font-size: 16px;
+    }
+
+    .question-form-body pre,
+    .floating-question pre {
+        font-size: 22px;
+        line-height: 1.4;
+    }
+    
+    .math-keyboard p {
+        font-size: 10px;
+        margin-bottom: 4px;
+    }
+    
+    /* Flash Mode Mobile Responsive */
+    .flash-mode-button,
+    .abacus-button {
+        padding: 6px 10px;
+        margin-right: 4px;
+    }
+    
+    .flash-mode-button i,
+    .abacus-button i {
+        font-size: 14px;
+    }
+    
+    .flash-line {
+        font-size: 50px;
+        min-height: 90px;
+        line-height: 1;
+    }
+    
+    .flash-answer-text {
+        font-size: 20px;
+    }
+    
+    .start-flash-btn {
+        font-size: 18px;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .flash-mode-question {
+        min-height: 200px;
+        padding: 1rem;
+    }
+
+    .floating-question {
+        width: 94%;
+        left: 12px !important;
+        padding: 0.8rem 1rem;
+    }
+
+    .question-img img {
+        width: 95%;
+    }
+
+    .mcq-choice {
+        padding: 0.7rem 0.9rem;
+        font-size: 13px;
+        border-radius: 12px;
+    }
+    
+    .mcq-choice input[type="radio"] {
+        width: 1.1em;
+        height: 1.1em;
+        margin-right: 0.7rem;
+    }
+    
+    .mcq-title {
+        font-size: 15px;
+        margin-bottom: 0.8rem;
+    }
+    
+    .mcq-answer-layout {
+        gap: 0.7rem;
+    }
+    
+    .graph-answer-layout {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .popup-container,
+    .result-popup-container,
+    .question-list-container {
+        width: 95%;
+        padding: 1rem;
+        top: 80px;
+    }
+
+    .result-popup-container {
+        padding: 0.8rem 1rem;
+    }
+    
+    .popup-head p {
+        font-size: 22px;
+    }
+    
+    .popup-body p {
+        font-size: 22px;
+    }
+
+    .popup-body img {
+        width: 100%;
+        margin-inline: auto;
+    }
+
+    .result-popup-body th {
+        font-size: 16px;
+        padding: 0.4rem 0.2rem;
+    }
+    
+    .result-popup-body td {
+        font-size: 15px;
+    }
+
+    .result-popup-head img {
+        width: 180px;
+    }
+
+    .result-popup-head p {
+        font-size: 17px;
+        width: auto;
+        max-width: 280px;
+    }
+
+    .whiteboard {
+        width: 95%;
+    }
+
+    .whiteboard-img-container {
+        width: 95%;
+        top: 70px;
+    }
+
+    .whiteboard-img img {
+        width: 85%;
+    }
+
+    .close-whiteboard {
+        right: 88%;
+    }
+
+    .close-whiteboard p {
+        font-size: 28px;
+    }
+
+    .whiteboard-color div {
+        width: 28px;
+        height: 28px;
+    }
+
+    .red {
+        right: 10px;
+    }
+
+    .black {
+        right: 48px;
+    }
+
+    .blue {
+        right: 86px;
+    }
+
+    .whiteboard-modify {
+        right: 130px;
+    }
+
+    .whiteboard-modify i {
+        font-size: 24px;
+    }
+
+    .whiteboard-modify button {
+        font-size: 16px;
+        padding: 0.4rem 0.8rem;
+        margin-right: 10px;
+    }
+
+    .timer {
+        flex-wrap: wrap;
+    }
+
+    .timer div {
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .timer div:last-child {
+        margin-left: 0rem;
+    }
+    
+    .timer input {
+        padding: 0.7rem 0.4rem;
+    }
+    
+    .question-number p {
+        padding: 0.5rem 0.7rem;
+        font-size: 14px;
+        margin-right: 0.3rem;
+    }
+    
+    .question-form-btn {
+        width: 80px;
+        height: 40px;
+        font-size: 15px;
+    }
+    
+    .question-footer-btn button {
+        width: 110px;
+        font-size: 16px;
+    }
+    
+    .question-end-btn button {
+        width: 180px;
+        font-size: 16px;
+    }
+    
+    .question-pocket {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+        left: 20px;
+        bottom: 30px;
+    }
+    
+    .pocket-number {
+        width: 22px;
+        height: 22px;
+        font-size: 12px;
+    }
+    
+    .math-keyboard .digit-button {
+        width: 100% !important;
+        height: 42px !important;
+        margin: 0 !important;
+        font-size: 18px !important;
+        border-radius: 6px !important;
+        box-shadow: 0 2px 0 0 #4c5287 !important;
+    }
+    
+    .math-keyboard .digit-button:active {
+        transform: translateY(1.5px) !important;
+        box-shadow: 0 1px 0 0 #4c5287 !important;
+    }
+    
+    .math-keyboard .keyboard-next-btn {
+        height: 42px !important;
+        font-size: 16px !important;
+    }
+}
+
+/* Very Small Mobile Devices */
+@media only screen and (max-width: 400px) {
+    .nav-container {
+        padding: 0.8rem 0.5rem;
+    }
+    
+    .nav-container img {
+        width: 120px;
+    }
+    
+    .nav-right-side img {
+        width: 35px !important;
+    }
+    
+    .question-container {
+        width: 98%;
+        padding: 0.3rem 0.3rem;
+    }
+    
+    .question-form {
+        padding: 0.7rem 0.8rem;
+        min-height: 28vh;
+        max-height: 42vh;
+        border-radius: 15px;
+    }
+    
+    .question-form-head p {
+        font-size: 15px;
+    }
+    
+    .end-head p {
+        font-size: 11px;
+    }
+    
+    .end-head i {
+        font-size: 14px;
+    }
+    
+    .question-form-body {
+        gap: 6px;
+        padding: 0.4rem;
+    }
+
+    .question-form-body pre {
+        flex: 0 0 80px;
+        font-size: 24px;
+        line-height: 1.4;
+        padding-right: 8px;
+        text-align: right;
+        border-right: 2px solid #4C5287;
+    }
+    
+    .floating-question pre {
+        font-size: 20px;
+        line-height: 1.3;
+    }
+    
+    .math-keyboard p {
+        font-size: 10px;
+        margin-bottom: 6px;
+    }
+    
+    /* Flash Mode Extra Small Mobile Responsive */
+    .flash-mode-button,
+    .abacus-button {
+        padding: 5px 8px;
+        margin-right: 3px;
+    }
+    
+    .flash-mode-button i,
+    .abacus-button i {
+        font-size: 12px;
+    }
+    
+    .flash-line {
+        font-size: 40px;
+        min-height: 70px;
+        line-height: 1;
+    }
+    
+    .flash-answer-text {
+        font-size: 18px;
+    }
+    
+    .start-flash-btn {
+        font-size: 16px;
+        padding: 0.7rem 1.2rem;
+    }
+    
+    .flash-mode-question {
+        min-height: 180px;
+        padding: 0.8rem;
+    }
+    
+    .mcq-choice {
+        padding: 0.6rem 0.7rem;
+        font-size: 12px;
+        border-radius: 10px;
+    }
+    
+    .mcq-choice input[type="radio"] {
+        width: 1em;
+        height: 1em;
+        margin-right: 0.6rem;
+    }
+    
+    .mcq-title {
+        font-size: 14px;
+        margin-bottom: 0.7rem;
+    }
+    
+    .mcq-answer-layout {
+        gap: 0.6rem;
+    }
+    
+    .question-number p {
+        padding: 0.4rem 0.6rem;
+        font-size: 13px;
+    }
+    
+    .popup-container,
+    .result-popup-container,
+    .question-list-container {
+        width: 98%;
+        padding: 0.8rem;
+        top: 60px;
+        border-radius: 15px;
+    }
+    
+    .popup-head p {
+        font-size: 20px;
+    }
+    
+    .popup-body p {
+        font-size: 20px;
+    }
+    
+    .result-popup-head img {
+        width: 150px;
+    }
+    
+    .result-popup-head p {
+        font-size: 15px;
+        max-width: 250px;
+    }
+    
+    .result-popup-body th {
+        font-size: 14px;
+        padding: 0.3rem 0.2rem;
+    }
+    
+    .result-popup-body td {
+        font-size: 13px;
+        padding: 0.3rem 0.1rem;
+    }
+    
+    .question-form-btn {
+        width: 70px;
+        height: 38px;
+        font-size: 14px;
+        padding: 0rem 0.8rem !important;
+    }
+    
+    .question-footer-btn button {
+        width: 100px;
+        font-size: 15px;
+        padding: 0.5rem 0rem;
+    }
+    
+    .question-end-btn button {
+        width: 160px;
+        font-size: 15px;
+        padding: 0.5rem 1rem;
+    }
+    
+    .question-pocket {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+        left: 15px;
+        bottom: 25px;
+    }
+    
+    .pocket-number {
+        width: 20px;
+        height: 20px;
+        font-size: 11px;
+    }
+    
+    /* Mobile Portrait: Question text and keyboard side-by-side INSIDE question-form-body */
+    .question-form {
+        width: 100%;
+        min-height: 35vh;
+        max-height: 50vh;
+    }
+
+    .question-form-body {
+        display: flex;
+        flex-direction: row;
+        gap: 0.4rem;
+        align-items: flex-start;
+    }
+
+    .question-form-body pre {
+        flex-shrink: 0;
+        width: auto;
+        max-width: 30%;
+        margin-right: 0.3rem;
+    }
+
+    .math-keyboard {
+        width: auto !important;
+        flex-grow: 1;
+        max-width: none;
+        position: relative !important;
+        right: auto !important;
+        top: auto !important;
+        transform: none !important;
+        margin-top: 0;
+    }
+
+    .math-keyboard > div {
+        width: 100% !important;
+    }
+    
+    /* Ensure 3-column grid layout for very small mobile - smaller size */
+    .keyboard-container {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 3px !important;
+        width: 100% !important;
+    }
+    
+    .math-keyboard .digit-button {
+        width: 100% !important;
+        height: 38px !important;
+        margin: 0 !important;
+        font-size: 16px !important;
+        border-radius: 5px !important;
+        box-shadow: 0 2px 0 0 #4c5287 !important;
+    }
+    
+    .math-keyboard .digit-button:active {
+        transform: translateY(1px) !important;
+        box-shadow: 0 1px 0 0 #4c5287 !important;
+    }
+    
+    .math-keyboard .keyboard-next-btn {
+        height: 38px !important;
+        font-size: 14px !important;
+    }
+    
+    .math-keyboard p {
+        font-size: 9px !important;
+        margin-bottom: 3px !important;
+    }
+    
+    .whiteboard-modify button {
+        font-size: 14px;
+        padding: 0.3rem 0.6rem;
+    }
+    
+    .close-whiteboard p {
+        font-size: 24px;
+    }
+    
+    .assignment-title input,
+    .timer input {
+        padding: 0.6rem 0.4rem;
+        font-size: 14px;
+    }
+    
+    .select-class {
+        height: 2.2em;
+    }
+    
+    .select-class select {
+        font-size: 14px;
+    }
+}
+
+/* Landscape Orientation Adjustments for Mobile */
+@media only screen and (max-height: 500px) and (orientation: landscape) {
+    /* Landscape: Question text and keyboard side-by-side */
+    .question-form {
+        width: 100%;
+        min-height: 60vh;
+        max-height: 70vh;
+    }
+
+    .question-form-body {
+        display: flex;
+        flex-direction: row;
+        gap: 0.6rem;
+        align-items: flex-start;
+    }
+
+    .question-form-body pre {
+        flex-shrink: 0;
+        width: auto;
+        max-width: 35%;
+        margin-right: 0.5rem;
+    }
+
+    .math-keyboard {
+        width: auto !important;
+        flex-grow: 1;
+        max-width: none;
+        position: relative !important;
+        right: auto !important;
+        top: auto !important;
+        transform: none !important;
+        margin-top: 0;
+    }
+
+    .math-keyboard > div {
+        width: 100% !important;
+    }
+    
+    /* Ensure 3-column grid layout for landscape - smaller size */
+    .keyboard-container {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 4px !important;
+        width: 100% !important;
+    }
+    
+    .math-keyboard .digit-button {
+        width: 100% !important;
+        height: 40px !important;
+        margin: 0 !important;
+        font-size: 17px !important;
+    }
+    
+    .math-keyboard .keyboard-next-btn {
+        height: 40px !important;
+        font-size: 15px !important;
+    }
+    
+    .math-keyboard p {
+        font-size: 9px !important;
+        margin-bottom: 3px !important;
+    }
+    
+    .popup-container,
+    .result-popup-container,
+    .question-list-container {
+        max-height: 85vh;
+        top: 60px;
+    }
+}

@@ -1,0 +1,298 @@
+.teacher-dashboard-container {
+    padding: 0rem 2.2rem;
+    padding-bottom: 6.5rem;
+}
+
+.assignment-teacher-item {
+    background-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
+    padding: 1rem 0.8rem;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+}
+
+.assignment-teacher-item p {
+    font-size: 17px;
+}
+
+.assignment-icon i {
+    font-size: 20px;
+    margin-right: 0.4rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    background-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 15px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.assignment-icon i:first-child {
+    color: blue;
+}
+
+.assignment-icon i:nth-child(2) {
+    color: #5d17eb;
+}
+
+.assignment-icon:last-child {
+    color: red;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .teacher-dashboard-container {
+        padding: 0rem 1.2rem;
+        padding-bottom: 6.5rem;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+    .teacher-dashboard-container {
+        padding: 0rem 1rem;
+        padding-bottom: 6.5rem;
+    }
+}
+/* PDF Reports Button Styles */
+.pdf-reports-btn {
+    color: #dc3545;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+.pdf-reports-btn:hover {
+    background-color: #dc3545;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+.assignment-info {
+    flex: 1;
+}
+
+.assignment-title {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.assignment-details {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.assignment-details span {
+    font-size: 12px;
+    color: #666;
+    background: #f8f9fa;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+/* Improve existing icons */
+.assignment-icon i {
+    margin: 0 5px;
+    padding: 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.assignment-icon i:hover {
+    background-color: #007bff;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.assignment-icon .fa-trash:hover {
+    background-color: #dc3545;
+}
+
+.assignment-icon .fa-eye:hover {
+    background-color: #28a745;
+}
+
+.assignment-icon .fa-pencil:hover {
+    background-color: #ffc107;
+    color: #000;
+}
+
+/* Floating Help Button */
+.floating-help-btn {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FF4444 0%, #CC0000 100%);
+    border: 3px solid white;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 24px rgba(255, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 999999;
+    animation: pulse-help 2.5s ease-in-out infinite;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.floating-help-btn:hover {
+    transform: translateY(-6px) scale(1.1);
+    box-shadow: 0 10px 35px rgba(255, 0, 0, 0.7), 0 4px 12px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #FF5555 0%, #DD0000 100%);
+}
+
+.floating-help-btn:active {
+    transform: translateY(-3px) scale(1.05);
+}
+
+@keyframes pulse-help {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 6px 24px rgba(255, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        transform: scale(1.08);
+        box-shadow: 0 8px 32px rgba(255, 0, 0, 0.7), 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .floating-help-btn {
+        bottom: 90px;
+        right: 20px;
+        width: 64px;
+        height: 64px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .floating-help-btn {
+        bottom: 85px;
+        right: 15px;
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Re-assign Popup Styles */
+.reassign-container {
+    position: absolute !important;
+    top: 120px !important;
+    background-color: #fff;
+    width: 50%;
+    padding: 1rem;
+    border-radius: 10px;
+    overflow-y: scroll;
+    max-height: 85vh;
+    transition: 0.7s;
+}
+
+.reassign-container.class-top {
+    top: -1200px !important;
+}
+
+@media only screen and (max-width: 992px) {
+    .reassign-container {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .reassign-container {
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .reassign-container {
+        width: 95%;
+        padding: 0.8rem;
+    }
+}
+
+/* Student List Popup Styles */
+.student-item-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+}
+
+.student-item-link {
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+}
+
+.student-item-link:hover {
+    text-decoration: none;
+}
+
+.student-item {
+    background-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.01), 0 6px 15px 0 rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.student-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.student-item p {
+    font-size: 17px;
+    margin: 0;
+    color: #333;
+}
+
+.student-history-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem;
+    background-color: #667eea;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.student-history-icon:hover {
+    background-color: #5568d3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    color: white;
+}
+
+.student-history-icon:active {
+    transform: translateY(0);
+}
+
+@media only screen and (max-width: 600px) {
+    .student-item-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .student-history-icon {
+        width: 100%;
+        justify-content: center;
+    }
+}

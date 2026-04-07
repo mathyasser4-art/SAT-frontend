@@ -1,0 +1,55 @@
+.res-pas-code {
+    height: 100vh;
+}
+
+.res-pas-code-logo {
+    margin-bottom: 1.5rem;
+}
+
+.res-pas-code-logo img {
+    width: 280px;
+}
+
+.res-pas-code-title p {
+    font-size: 25px;
+    color: rgb(40, 39, 39);
+}
+
+.res-pas-code-title {
+    margin-bottom: 2rem;
+}
+
+.res-pas-code-input input{
+    height: 45px;
+    width: 42px;
+    margin-right: 0.6rem;
+    outline: none;
+    text-align: center;
+    font-size: 1.125rem;
+    border: 1px solid rgb(184, 182, 182);
+    border-radius: 8px;
+}
+
+.res-pas-code-input input::-webkit-inner-spin-button,
+.res-pas-code-input input::-webkit-outer-spin-button{
+    display: none;
+}
+
+.res-pas-code-btn{
+    width: 300px;
+    margin-right: 0.7rem;
+}
+
+.res-pas-code-btn button{
+    text-align: center;
+    width: 100%;
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    border: none;
+    color: #fff;
+    background-color: #5d17eb;
+    padding: 0.8rem 0rem;
+    cursor: pointer;
+    border-radius: 10px;
+}
