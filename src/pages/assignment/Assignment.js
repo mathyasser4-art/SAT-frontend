@@ -1041,7 +1041,7 @@ function Assignment() {
                   )}
                 </div>
               ) : (
-                <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(thisQuestion?.question) }} />
+                <div>{DOMPurify.sanitize(thisQuestion?.question, { ALLOWED_TAGS: [] })}</div>
               )}
 
               {thisQuestion?.typeOfAnswer === 'Essay' ? (
