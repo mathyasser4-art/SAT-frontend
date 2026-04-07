@@ -368,7 +368,7 @@ function TeacherDashboard() {
                                     {item?.questionPic ? <div className='d-flex question-img justify-content-center align-items-center'>
                                         <img src={item?.questionPic} alt="" />
                                     </div> : null}
-                                    <div>{DOMPurify.sanitize(item?.question, { ALLOWED_TAGS: [] })}</div>
+<div className="question-html" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(item?.question || '', { ALLOWED_TAGS: ['p','b','strong','i','em','u','br','ul','ol','li','span'] }).replace(/&nbsp;/g, ' ')}} />
                                     <div onClick={() => removeFromPocket(item._id)} className="remove-question">
                                         <i className="fa fa-trash" aria-hidden="true"></i>
                                     </div>

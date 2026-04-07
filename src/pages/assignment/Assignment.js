@@ -1041,7 +1041,16 @@ function Assignment() {
                   )}
                 </div>
               ) : (
-                <div>{DOMPurify.sanitize(thisQuestion?.question, { ALLOWED_TAGS: [] })}</div>
+                <div
+                  className="question-html"
+                  dangerouslySetInnerHTML={{
+                    __html: DOMPurify
+                      .sanitize(thisQuestion?.question || '', {
+                        ALLOWED_TAGS: ['p', 'b', 'strong', 'i', 'em', 'u', 'br', 'ul', 'ol', 'li', 'span']
+                      })
+                      .replace(/&nbsp;/g, ' ')
+                  }}
+                />
               )}
 
               {thisQuestion?.typeOfAnswer === 'Essay' ? (

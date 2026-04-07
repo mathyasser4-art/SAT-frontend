@@ -703,7 +703,16 @@ function Question() {
                                     )}
                                 </div>
                             ) : (
-                                <div>{DOMPurify.sanitize(thisQuestion?.question, { ALLOWED_TAGS: [] })}</div>
+                                <div
+                                    className="question-html"
+                                    dangerouslySetInnerHTML={{
+                                        __html: DOMPurify
+                                            .sanitize(thisQuestion?.question || '', {
+                                                ALLOWED_TAGS: ['p','b','strong','i','em','u','br','ul','ol','li','span']
+                                            })
+                                            .replace(/&nbsp;/g, ' ')
+                                    }}
+                                />
                             )}
 
                             {thisQuestion?.typeOfAnswer === 'Essay' && (
@@ -849,7 +858,7 @@ function Question() {
                         {questionList.map(item => (
                             <div key={item._id} className='question-form-body form-body-list'>
                                 {item.questionPic && <div className='d-flex question-img'><img src={item.questionPic} alt="Pocket question" /></div>}
-                                <div>{DOMPurify.sanitize(item.question, { ALLOWED_TAGS: [] })}</div>
+<div className="question-html" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(item.question || '', { ALLOWED_TAGS: ['p','b','strong','i','em','u','br','ul','ol','li','span'] }).replace(/&nbsp;/g, ' ')}} />
                                 <div onClick={() => removeFromPocket(item._id)} className='remove-question'><i className='fa fa-trash' aria-hidden='true'></i></div>
                             </div>
                         ))}
