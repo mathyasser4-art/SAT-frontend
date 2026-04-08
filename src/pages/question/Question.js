@@ -14,9 +14,9 @@ import API_BASE_URL from '../../config/api.config';
 import AbacusSimulator from '../../components/abacus/AbacusSimulator';
 import soundEffects from '../../utils/soundEffects';
 import { ArrowRight, Maximize2, Minimize2 } from 'lucide-react';
-import DOMPurify from 'dompurify';
+import { renderLatexInHtml } from '../../utils/latexRenderer';
 import '../../reusable.css';
-import './question-render.css';
+import '../question-render.css';
 import './Question.css';
 
 function Question() {
@@ -707,22 +707,7 @@ function Question() {
                                 <div
                                     className="question-html-clean"
                                     dangerouslySetInnerHTML={{
-                                        __html: DOMPurify
-                                            .sanitize(thisQuestion?.question || '', {
-                                                ALLOWED_TAGS: ['p', 'b', 'strong', 'i', 'em', 'u', 'br', 'ul', 'ol', 'li', 'span', 'img', 'h1', 'h2', 'h3', 'blockquote'],
-                                                ALLOWED_ATTR: ['src', 'alt', 'style', 'class', 'width', 'height']
-                                            })
-                                            .replace(/&nbsp;|&#160;|&amp;|<|>|"|&#x27;/g, (match) => ({
-                                                '&nbsp;': ' ',
-                                                '&#160;': ' ',
-                                                '&amp;': '&',
-                                                '<': '<',
-                                                '>': '>',
-                                                '"': '"',
-                                                '&#x27;': "'"
-                                            })[match] || match)
-                                            .replace(/\\n/g, '\n')
-                                            .trim()
+                                        __html: renderLatexInHtml(thisQuestion?.question || '')
                                     }}
                                 />
                             )}
@@ -870,17 +855,7 @@ function Question() {
                         {questionList.map(item => (
                             <div key={item._id} className='question-form-body form-body-list'>
                                 {item.questionPic && <div className='d-flex question-img'><img src={item.questionPic} alt="Pocket question" /></div>}
-                                <div className="question-html-clean" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(item.question || '', { ALLOWED_TAGS: ['p', 'b', 'strong', 'i', 'em', 'u', 'br', 'ul', 'ol', 'li', 'span', 'img', 'h1', 'h2', 'h3', 'blockquote'], ALLOWED_ATTR: ['src', 'alt', 'style', 'class', 'width', 'height'] }).replace(/&nbsp;|&#160;|&amp;|<|>|"|&#x27;/g, (match) => ({
-                                                '&nbsp;': ' ',
-                                                '&#160;': ' ',
-                                                '&amp;': '&',
-                                                '<': '<',
-                                                '>': '>',
-                                                '"': '"',
-                                                '&#x27;': "'"
-                                            })[match] || match)
-                                            .replace(/\\n/g, '\n')
-                                            .trim()}} />
+                                <div className="question-html-clean" dangerouslySetInnerHTML={{__html: renderLatexInHtml(item.question || '')}} />
                                 <div onClick={() => removeFromPocket(item._id)} className='remove-question'><i className='fa fa-trash' aria-hidden='true'></i></div>
                             </div>
                         ))}
