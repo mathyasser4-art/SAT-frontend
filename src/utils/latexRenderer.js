@@ -53,20 +53,35 @@ function renderKatex(formula, displayMode) {
 }
 
 /**
- * Handle Quill editor's ql-formula spans.
- * Quill stores math as: <span class="ql-formula" data-value="LaTeX">?</span>
- * The inner text "?" is just a placeholder — the real formula is in data-value.
- * We render each such span with KaTeX before DOMPurify sanitization.
+ * Handle Quill editor's ql-formula spans using DOM-based processing.
+ *
+ * WHY DOM instead of regex:
+ * Quill stores math as: <span class="ql-formula" data-value="LaTeX">...KaTeX HTML...</span>
+ * The inner content already contains rendered KaTeX spans. A regex like [\s\S]*?<\/span>
+ * would stop at the first *nested* closing </span> inside the KaTeX output, leaving
+ * the rest of the already-rendered HTML in the page and causing duplication.
+ *
+ * Using querySelectorAll correctly identifies the outer ql-formula span (regardless
+ * of nesting depth), and replaceWith() swaps the entire span — inner KaTeX and all —
+ * with a fresh render from data-value.
  */
 function renderQuillFormulas(html) {
-  return html.replace(
-    /<span\b[^>]*class="[^"]*ql-formula[^"]*"[^>]*>[\s\S]*?<\/span>/g,
-    (match) => {
-      const dvMatch = match.match(/data-value="([^"]*)"/);
-      if (!dvMatch) return match;
-      return renderKatex(dvMatch[1], false);
-    }
-  );
+  const container = document.createElement('div');
+  container.innerHTML = html;
+
+  container.querySelectorAll('span.ql-formula').forEach(span => {
+    const formula = span.getAttribute('data-value');
+    if (!formula) return;
+
+    const rendered = renderKatex(formula, false);
+    const tmp = document.createElement('span');
+    tmp.innerHTML = rendered;
+    // Replace the entire ql-formula span (with all its nested KaTeX content)
+    // with a fresh single render from data-value
+    span.replaceWith(...tmp.childNodes);
+  });
+
+  return container.innerHTML;
 }
 
 function renderMath(text) {
@@ -78,8 +93,7 @@ function renderMath(text) {
 export function renderLatexInHtml(rawHtml) {
   if (!rawHtml) return '';
 
-  // Step 1: Render Quill ql-formula spans BEFORE sanitization
-  //         so data-value LaTeX is captured before DOMPurify can touch the attribute
+  // Step 1: Render Quill ql-formula spans via DOM — correctly handles nested KaTeX HTML
   const withQuillMath = renderQuillFormulas(rawHtml);
 
   // Step 2: Sanitize — DOMPurify removes XSS vectors while preserving KaTeX HTML output
