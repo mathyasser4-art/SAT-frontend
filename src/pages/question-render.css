@@ -1,0 +1,96 @@
+/* Clean rendering for sanitized question HTML */
+
+/* Base question container */
+.question-html {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* RTL support for Arabic */
+.question-html[dir="rtl"],
+.question-html:dir(rtl) {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+
+/* Typography */
+.question-html h1 { font-size: 28px; font-weight: bold; margin: 1.5em 0 1em; }
+.question-html h2 { font-size: 24px; font-weight: bold; margin: 1.2em 0 0.8em; }
+.question-html h3 { font-size: 20px; font-weight: bold; margin: 1em 0 0.6em; }
+
+.question-html p {
+  margin: 1em 0;
+  text-align: justify;
+}
+
+.question-html strong, .question-html b { font-weight: 700; }
+.question-html em, .question-html i { font-style: italic; }
+.question-html u { text-decoration: underline; }
+
+/* Lists */
+.question-html ul, .question-html ol {
+  padding-left: 2em;
+  margin: 1em 0;
+}
+
+.question-html li {
+  margin: 0.5em 0;
+}
+
+/* Images */
+.question-html img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 1em auto;
+  display: block;
+}
+
+/* Blockquote */
+.question-html blockquote {
+  border-left: 4px solid #007cba;
+  padding-left: 1.5em;
+  margin: 1.5em 0;
+  font-style: italic;
+  background: #f8f9fa;
+  padding: 1em;
+  border-radius: 4px;
+}
+
+/* Spans (inline styling fallback) */
+.question-html span {
+  /* Preserve intentional styling */
+}
+
+/* Remove unwanted spacing/artifacts */
+.question-html br { display: block; margin: 0.5em 0; }
+.question-html:empty { display: none; }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .question-html {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .question-html h1 { font-size: 24px; }
+  .question-html h2 { font-size: 20px; }
+  .question-html h3 { font-size: 18px; }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .question-html { 
+    border: 1px solid #000; 
+    padding: 1em; 
+  }
+}
+

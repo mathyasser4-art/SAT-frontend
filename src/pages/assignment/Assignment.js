@@ -17,7 +17,8 @@ import AbacusSimulator from '../../components/abacus/AbacusSimulator';
 import soundEffects from '../../utils/soundEffects';
 import { Calculator, CircleCheck, ArrowRight, Maximize2, Minimize2 } from 'lucide-react';
 import DOMPurify from 'dompurify';
-import '../../reusable.css'
+import '../../reusable.css';
+import './question-render.css';
 import './Assignment.css'
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
@@ -1042,14 +1043,24 @@ function Assignment() {
                 </div>
               ) : (
                 <div
-                  className="question-html ql-editor"
+                  className="question-html-clean"
                   dangerouslySetInnerHTML={{
                     __html: DOMPurify
                       .sanitize(thisQuestion?.question || '', {
                         ALLOWED_TAGS: ['p', 'b', 'strong', 'i', 'em', 'u', 'br', 'ul', 'ol', 'li', 'span', 'img', 'h1', 'h2', 'h3', 'blockquote'],
                         ALLOWED_ATTR: ['src', 'alt', 'style', 'class', 'width', 'height']
                       })
-                      .replace(/&nbsp;/g, ' ')
+                      .replace(/&nbsp;|&#160;|&amp;|<|>|"|&#x27;/g, (match) => ({
+                        '&nbsp;': ' ',
+                        '&#160;': ' ',
+                        '&amp;': '&',
+                        '<': '<',
+                        '>': '>',
+                        '"': '"',
+                        '&#x27;': "'"
+                      })[match] || match)
+                      .replace(/\\n/g, '\n')
+                      .trim()
                   }}
                 />
               )}
