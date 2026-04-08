@@ -1,366 +1,321 @@
-.h-100vh {
-    height: 100vh;
-}
+/* ===================================================
+   Reusable Utility Classes — SAT Frontend
+   Professional academic design system
+   =================================================== */
 
-/* Rich-text question display: reset Quill editor chrome when used as read-only */
-.question-form-body .ql-editor,
-.form-body-list .ql-editor {
-    padding: 0;
-    border: none;
-    box-shadow: none;
-    font-size: inherit;
-    line-height: inherit;
-    color: inherit;
-    font-family: inherit;
-    overflow: visible;
-}
+/* ---- Layout ---- */
+.h-100vh { height: 100vh; }
 
-.input-form {
-    width: 300px;
-    padding: 12px 15px;
-    outline: none;
-    border: 1px solid #bbb;
-    border-radius: 20px;
-    margin-top: 1.8rem;
-    margin-right: 0.3rem;
-}
+.d-flex        { display: flex; }
+.d-block       { display: block; }
+.d-none        { display: none; }
 
-.error-line{
-    color: red;
-    font-size: 17px;
-    margin-top: -1.5rem;
+.flex-wrap                  { flex-wrap: wrap; }
+.flex-direction-column      { flex-direction: column; }
+.justify-content-center     { justify-content: center; }
+.justify-content-space-around  { justify-content: space-around; }
+.justify-content-space-between { justify-content: space-between; }
+.justify-content-flex-start { justify-content: flex-start; }
+.align-items-center         { align-items: center; }
+
+/* ---- Typography ---- */
+.text-center  { text-align: center; }
+.text-color   { color: var(--text, #0F172A); }
+.text-error   { color: var(--error, #DC2626) !important; }
+.text-red     { color: var(--error, #DC2626); }
+.text-purple  { color: var(--sat-blue, #2563EB); }
+.text-gray    { color: var(--text-muted, #64748B); }
+
+/* ---- Error Messages ---- */
+.error-line {
+  color: var(--error, #DC2626);
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: -1rem;
 }
 
 .error {
-    text-align: center;
-    color: red;
-    font-size: 17px;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    width: 340px;
-    padding: 1rem 0.3rem;
-    border-radius: 10px;
-    background-color: rgb(216, 147, 147);
+  display: block;
+  text-align: center;
+  color: var(--error, #DC2626);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 380px;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius, 10px);
+  background-color: var(--error-bg, #FEF2F2);
+  border: 1px solid #FECACA;
 }
 
 .error-dengare {
-    width: 100%;
-    margin-top: 0.6rem;
-    margin-bottom: 0rem;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
 }
 
-.d-flex {
-    display: flex;
+/* ---- Rich-text question display: reset Quill editor chrome ---- */
+.question-form-body .ql-editor,
+.form-body-list .ql-editor {
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  font-family: inherit;
+  overflow: visible;
 }
 
-.flex-wrap {
-    flex-wrap: wrap;
+/* ---- Input ---- */
+.input-form {
+  width: 100%;
+  max-width: 340px;
+  padding: 10px 14px;
+  outline: none;
+  border: 1px solid var(--border, #CBD5E1);
+  border-radius: var(--radius, 10px);
+  margin-top: 1.5rem;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 15px;
+  color: var(--text, #0F172A);
+  background: var(--surface, #fff);
+  transition: border-color 0.15s ease;
 }
 
-.justify-content-center {
-    justify-content: center;
+.input-form:focus {
+  border-color: var(--sat-blue, #2563EB);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
-.justify-content-space-around {
-    justify-content: space-around;
-}
-
-.justify-content-space-between {
-    justify-content: space-between;
-}
-
-.align-items-center {
-    align-items: center;
-}
-
-.flex-direction-column {
-    flex-direction: column;
-}
-
-.justify-content-flex-start{
-    justify-content: flex-start;
-}
-
-.d-none {
-    display: none;
-}
-
-.d-block {
-    display: block;
-}
-
-.text-color {
-    color: rgb(56, 56, 56);
-}
-
-.text-error {
-    color: rgb(224, 5, 5) !important;
-}
-
+/* ---- Primary Button ---- */
 .button {
-    padding: 0.6rem 1rem;
-    border-radius: 10px;
-    border: 0;
-    background-color: rgb(3, 3, 173);
-    color: #fff;
-    font-size: 1.1rem;
-    cursor: pointer;
+  padding: 0.55rem 1.2rem;
+  border-radius: var(--radius, 10px);
+  border: none;
+  background-color: var(--sat-navy, #1B3A6B);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+  letter-spacing: 0.01em;
 }
 
-.loading-container,
-.error-container {
-    padding-top: 15rem;
+.button:hover {
+  background-color: var(--sat-blue, #2563EB);
 }
 
-.text-red {
-    color: #ff3131;
+.button:active {
+  transform: scale(0.98);
 }
 
-.text-purple {
-    color: #5d17eb;
+.popup-btn {
+  margin: 0 0.3rem;
 }
 
-.text-gray {
-    color: #797777;
+.popup-btn2 {
+  background-color: var(--sat-blue, #2563EB);
+  margin: 0 0.3rem;
 }
 
-.text-center {
-    text-align: center;
+.popup-btn2:hover {
+  background-color: var(--sat-hover-blue, #1D4ED8);
 }
 
+.btn-red {
+  background-color: var(--error, #DC2626) !important;
+  color: white !important;
+}
+
+/* ---- Loading Spinner ---- */
 .loader {
-    width: 20px;
-    height: 20px;
-    border: 3px solid #fff;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255,255,255,0.5);
+  border-bottom-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 0.8s linear infinite;
+  vertical-align: middle;
 }
 
 @keyframes rotation {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
+/* ---- Loading / Error Containers ---- */
+.loading-container,
+.error-container {
+  padding-top: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ---- Toast Alerts ---- */
 .alert {
-    background-color: green;
-    color: #fff;
-    width: 350px;
-    text-align: center;
-    padding: 1rem 0.5rem;
-    border-radius: 10px;
-    position: fixed;
-    top: -250px;
-    z-index: 99999;
-    transition: 0.7s;
+  background-color: var(--success, #16A34A);
+  color: #fff;
+  width: 320px;
+  max-width: 90vw;
+  text-align: center;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius, 10px);
+  position: fixed;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99999;
+  transition: top 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  font-weight: 500;
+  font-size: 15px;
+  box-shadow: var(--shadow-lg);
 }
 
 .alert-active {
-    top: 30px !important;
+  top: 80px !important;
 }
 
+/* ---- Skeleton Loader ---- */
 .skeleton {
-    animation: skeleton-loading 1s linear infinite alternate;
-}
-
-/* Keyboard Style Start */
-.keyboard-container {
-    position: relative;
-    width: 100%;
-    background-color: #fff;
-    padding: 8px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 6px;
-    z-index: 1000;
-}
-
-.digit-button {
-    aspect-ratio: 1;
-    border: none;
-    border-radius: 8px;
-    background-color: #f0f0f0;
-    cursor: pointer;
-    font-size: 36px;
-    font-weight: 700;
-    transition: all 0.15s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 48px;
-    width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    line-height: 1;
-}
-
-.digit-button:active {
-    transform: scale(0.95);
-    background-color: #ddd;
-}
-
-.digit-button:hover {
-    background-color: #e0e0e0;
-}
-
-.toggle-btn {
-    aspect-ratio: 1;
-    border: none;
-    border-radius: 8px;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 700;
-    transition: all 0.15s ease;
-    min-height: 48px;
-    width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    line-height: 1;
-}
-
-.toggle-btn:active {
-    transform: scale(0.95);
-    background-color: #0056b3;
-}
-
-.toggle-btn:hover {
-    background-color: #0069d9;
-}
-
-.keyboard-next-btn {
-    grid-column: span 3;
-    margin-top: 6px;
-    padding: 12px !important;
-    border-radius: 8px;
-    min-height: 48px;
-    aspect-ratio: auto !important;
-    width: 100% !important;
-    background-color: #65C6EE !important;
-}
-
-.input-style {
-    width: 100%;
-    padding: 10px 12px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    outline: none;
-    box-sizing: border-box;
-}
-/* Keyboard Style End */
-
-/* Desktop: Keep original fixed position on right side with 3-column layout */
-@media only screen and (min-width: 993px) {
-    .keyboard-container {
-        grid-template-columns: repeat(3, 1fr);
-        padding: 8px;
-        gap: 6px;
-        max-width: 300px;
-    }
-    
-    .digit-button {
-        font-size: 26px;
-        min-height: 48px;
-    }
-    
-    .toggle-btn {
-        font-size: 20px;
-        min-height: 48px;
-        grid-column: span 2;
-    }
-    
-    .keyboard-next-btn {
-        grid-column: span 3;
-        margin-top: 6px;
-        padding: 12px !important;
-        min-height: 48px;
-    }
-}
-
-/* Mobile Portrait: Optimized for side-by-side layout */
-@media only screen and (max-width: 600px) {
-    .keyboard-container {
-        padding: 6px;
-        gap: 4px;
-    }
-    
-    .digit-button {
-        font-size: 32px;
-        min-height: 44px;
-        border-radius: 6px;
-    }
-    
-    .toggle-btn {
-        font-size: 18px;
-        min-height: 44px;
-        border-radius: 6px;
-    }
-    
-    .keyboard-next-btn {
-        margin-top: 4px;
-        padding: 10px !important;
-        min-height: 44px;
-    }
-    
-    .input-style {
-        padding: 8px 10px;
-        font-size: 14px;
-    }
-}
-
-/* Very Small Phones: Further optimization */
-@media only screen and (max-width: 360px) {
-    .keyboard-container {
-        padding: 4px;
-        gap: 3px;
-    }
-    
-    .digit-button {
-        font-size: 28px;
-        min-height: 40px;
-    }
-    
-    .toggle-btn {
-        font-size: 16px;
-        min-height: 40px;
-    }
-    
-    .keyboard-next-btn {
-        margin-top: 3px;
-        padding: 8px !important;
-        min-height: 40px;
-    }
-    
-    .input-style {
-        padding: 6px 8px;
-        font-size: 12px;
-    }
-}
-
-.btn-red{
-    background-color: red !important;
-    color: white !important;
+  animation: skeleton-loading 1.2s ease-in-out infinite alternate;
+  border-radius: var(--radius-sm, 6px);
 }
 
 @keyframes skeleton-loading {
-    0% {
-        background-color: hsl(200, 20%, 70%);
-    }
+  0%   { background-color: hsl(210, 15%, 88%); }
+  100% { background-color: hsl(210, 15%, 96%); }
+}
 
-    100% {
-        background-color: hsl(200, 20%, 95%);
-    }
+/* ---- Numeric Keyboard ---- */
+.keyboard-container {
+  position: relative;
+  width: 100%;
+  background-color: var(--surface, #fff);
+  padding: 8px;
+  border-radius: var(--radius, 10px);
+  border: 1px solid var(--border-light, #E2E8F0);
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  z-index: 1000;
+  margin-top: 8px;
+}
+
+.digit-button {
+  aspect-ratio: 1;
+  border: 1px solid var(--border-light, #E2E8F0);
+  border-radius: var(--radius-sm, 6px);
+  background-color: var(--surface-muted, #F8FAFC);
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  transition: background-color 0.1s ease, transform 0.1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: var(--text, #0F172A);
+}
+
+.digit-button.digit-num:hover {
+  background-color: var(--sat-light-blue, #EFF6FF);
+  border-color: var(--sat-blue, #2563EB);
+  color: var(--sat-blue, #2563EB);
+}
+
+.digit-button.digit-action {
+  background-color: var(--surface-muted, #F1F5F9);
+  color: var(--text-muted, #64748B);
+}
+
+.digit-button.digit-action:hover {
+  background-color: #FEE2E2;
+  color: var(--error, #DC2626);
+}
+
+.digit-button:active {
+  transform: scale(0.94);
+}
+
+.toggle-btn {
+  aspect-ratio: 1;
+  border: 1px solid var(--border-light, #E2E8F0);
+  border-radius: var(--radius-sm, 6px);
+  background-color: var(--sat-navy, #1B3A6B);
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.15s ease;
+  min-height: 46px;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.toggle-btn:hover { background-color: var(--sat-blue, #2563EB); }
+
+.keyboard-next-btn {
+  grid-column: span 3;
+  margin-top: 4px;
+  padding: 10px !important;
+  border-radius: var(--radius-sm, 6px);
+  min-height: 46px;
+  aspect-ratio: auto !important;
+  width: 100% !important;
+  background-color: var(--sat-blue, #2563EB) !important;
+  color: #fff !important;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.keyboard-next-btn:hover {
+  background-color: var(--sat-hover-blue, #1D4ED8) !important;
+}
+
+.input-style {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 16px;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  border-radius: var(--radius, 10px);
+  border: 1px solid var(--border, #CBD5E1);
+  background: var(--surface, #fff);
+  color: var(--text, #0F172A);
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input-style:focus {
+  border-color: var(--sat-blue, #2563EB);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ---- Mobile keyboard overrides ---- */
+@media only screen and (max-width: 600px) {
+  .digit-button { font-size: 1.25rem; min-height: 42px; }
+  .keyboard-container { gap: 5px; padding: 6px; }
+}
+
+@media only screen and (max-width: 360px) {
+  .digit-button { font-size: 1.1rem; min-height: 38px; }
 }

@@ -1,18 +1,27 @@
-/* Clean rendering for sanitized question HTML */
+/* ===================================================
+   Question HTML Rendering Styles
+   Targets both .question-html-clean (used in JSX) and
+   .question-html (legacy). These styles ensure math,
+   text, images and RTL all render correctly.
+   =================================================== */
 
-/* Base question container */
+/* ---- Base Container ---- */
+.question-html-clean,
 .question-html {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 18px;
-  line-height: 1.6;
-  color: #333;
+  font-family: var(--font-body, 'Inter', -apple-system, sans-serif);
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--text, #0F172A);
   max-width: 100%;
   overflow-wrap: break-word;
   word-break: break-word;
-  hyphens: auto;
+  padding: 4px 0;
+  letter-spacing: 0.01em;
 }
 
-/* RTL support for Arabic */
+/* ---- RTL support for Arabic ---- */
+.question-html-clean[dir="rtl"],
+.question-html-clean:dir(rtl),
 .question-html[dir="rtl"],
 .question-html:dir(rtl) {
   direction: rtl;
@@ -20,77 +29,120 @@
   font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, Arial, sans-serif;
 }
 
-/* Typography */
-.question-html h1 { font-size: 28px; font-weight: bold; margin: 1.5em 0 1em; }
-.question-html h2 { font-size: 24px; font-weight: bold; margin: 1.2em 0 0.8em; }
-.question-html h3 { font-size: 20px; font-weight: bold; margin: 1em 0 0.6em; }
+/* ---- Typography inside questions ---- */
+.question-html-clean h1,
+.question-html h1 { font-size: 1.5em; font-weight: 700; margin: 1em 0 0.5em; }
 
+.question-html-clean h2,
+.question-html h2 { font-size: 1.3em; font-weight: 700; margin: 0.9em 0 0.4em; }
+
+.question-html-clean h3,
+.question-html h3 { font-size: 1.1em; font-weight: 600; margin: 0.8em 0 0.4em; }
+
+.question-html-clean p,
 .question-html p {
-  margin: 1em 0;
-  text-align: justify;
+  margin: 0.6em 0;
+  text-align: left;
 }
 
-.question-html strong, .question-html b { font-weight: 700; }
-.question-html em, .question-html i { font-style: italic; }
+.question-html-clean strong,
+.question-html-clean b,
+.question-html strong,
+.question-html b { font-weight: 700; }
+
+.question-html-clean em,
+.question-html-clean i,
+.question-html em,
+.question-html i { font-style: italic; }
+
+.question-html-clean u,
 .question-html u { text-decoration: underline; }
 
-/* Lists */
-.question-html ul, .question-html ol {
-  padding-left: 2em;
-  margin: 1em 0;
+/* ---- Lists ---- */
+.question-html-clean ul,
+.question-html-clean ol,
+.question-html ul,
+.question-html ol {
+  padding-left: 1.8em;
+  margin: 0.6em 0;
 }
 
-.question-html li {
-  margin: 0.5em 0;
-}
+.question-html-clean li,
+.question-html li { margin: 0.35em 0; }
 
-/* Images */
+/* ---- Images ---- */
+.question-html-clean img,
 .question-html img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  margin: 1em auto;
+  border: 1px solid var(--border-light, #E2E8F0);
+  margin: 0.8em auto;
   display: block;
 }
 
-/* Blockquote */
+/* ---- Blockquote ---- */
+.question-html-clean blockquote,
 .question-html blockquote {
-  border-left: 4px solid #007cba;
-  padding-left: 1.5em;
-  margin: 1.5em 0;
+  border-left: 3px solid var(--sat-blue, #2563EB);
+  padding: 0.75em 1.2em;
+  margin: 1em 0;
+  background: var(--sat-light-blue, #EFF6FF);
+  border-radius: 0 var(--radius, 10px) var(--radius, 10px) 0;
   font-style: italic;
-  background: #f8f9fa;
-  padding: 1em;
+  color: var(--text-muted, #64748B);
+}
+
+/* ---- Code spans ---- */
+.question-html-clean code,
+.question-html code {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.9em;
+  background: var(--surface-muted, #F1F5F9);
+  padding: 0.15em 0.4em;
   border-radius: 4px;
+  border: 1px solid var(--border-light, #E2E8F0);
 }
 
-/* Spans (inline styling fallback) */
-.question-html span {
-  /* Preserve intentional styling */
-}
+/* ---- Spans ---- */
+.question-html-clean span,
+.question-html span { display: inline; }
 
-/* Remove unwanted spacing/artifacts */
-.question-html br { display: block; margin: 0.5em 0; }
+/* ---- Line breaks ---- */
+.question-html-clean br,
+.question-html br { display: block; margin: 0.2em 0; content: ''; }
+
+/* ---- Empty container ---- */
+.question-html-clean:empty,
 .question-html:empty { display: none; }
 
-/* Mobile responsiveness */
+/* ---- KaTeX Math Styles inside question ---- */
+.question-html-clean .katex,
+.question-html .katex {
+  font-size: 1.05em;
+}
+
+.question-html-clean .katex-display,
+.question-html .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.4em 0;
+  margin: 0.5em 0;
+}
+
+/* ---- Mobile ---- */
 @media (max-width: 768px) {
+  .question-html-clean,
   .question-html {
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.75;
   }
-  
-  .question-html h1 { font-size: 24px; }
-  .question-html h2 { font-size: 20px; }
-  .question-html h3 { font-size: 18px; }
 }
 
-/* High contrast mode */
+/* ---- High Contrast ---- */
 @media (prefers-contrast: high) {
-  .question-html { 
-    border: 1px solid #000; 
-    padding: 1em; 
+  .question-html-clean,
+  .question-html {
+    color: #000;
   }
 }
-
