@@ -16,6 +16,7 @@ import MyTimer from '../../components/timer/Timer';
 import AbacusSimulator from '../../components/abacus/AbacusSimulator';
 import soundEffects from '../../utils/soundEffects';
 import { Calculator, CircleCheck, ArrowRight, Maximize2, Minimize2 } from 'lucide-react';
+import DOMPurify from 'dompurify';
 import '../../reusable.css'
 import './Assignment.css'
 import html2canvas from 'html2canvas';

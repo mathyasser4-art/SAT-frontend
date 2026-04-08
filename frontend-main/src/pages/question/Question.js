@@ -14,6 +14,7 @@ import API_BASE_URL from '../../config/api.config';
 import AbacusSimulator from '../../components/abacus/AbacusSimulator';
 import soundEffects from '../../utils/soundEffects';
 import { ArrowRight, Maximize2, Minimize2 } from 'lucide-react';
+import DOMPurify from 'dompurify';
 import '../../reusable.css';
 import './Question.css';
 

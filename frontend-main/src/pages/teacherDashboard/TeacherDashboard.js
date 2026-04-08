@@ -13,6 +13,7 @@ import removeAssignment from '../../api/assignment/removeAssignment.api';
 import DashboardLoading from '../../components/dashboardLoading/DashboardLoading'
 import { History } from 'lucide-react'
 import soundEffects from '../../utils/soundEffects'
+import DOMPurify from 'dompurify'
 import '../../reusable.css'
 import './TeacherDashboard.css'
 
