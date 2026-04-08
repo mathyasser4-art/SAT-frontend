@@ -16,8 +16,9 @@ import MyTimer from '../../components/timer/Timer';
 import AbacusSimulator from '../../components/abacus/AbacusSimulator';
 import soundEffects from '../../utils/soundEffects';
 import { Calculator, CircleCheck, ArrowRight, Maximize2, Minimize2 } from 'lucide-react';
-import DOMPurify from 'dompurify';
-import '../../reusable.css'
+import { renderLatexInHtml } from '../../utils/latexRenderer';
+import '../../reusable.css';
+import '../question-render.css';
 import './Assignment.css'
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
@@ -246,9 +247,16 @@ function Assignment() {
   };
 
   // Flash Mode Functions
+  const stripHtml = (html) => {
+    const tmp = document.createElement('div');
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || '';
+  };
+
   const getQuestionLines = () => {
     if (!thisQuestion?.question) return [];
-    return thisQuestion.question.split('\n').filter(line => line.trim());
+    const plainText = stripHtml(thisQuestion.question);
+    return plainText.split('\n').filter(line => line.trim());
   };
 
   const toggleFullscreen = () => {
@@ -1035,14 +1043,9 @@ function Assignment() {
                 </div>
               ) : (
                 <div
-                  className="question-html ql-editor"
+                  className="question-html-clean"
                   dangerouslySetInnerHTML={{
-                    __html: DOMPurify
-                      .sanitize(thisQuestion?.question || '', {
-                        ALLOWED_TAGS: ['p', 'b', 'strong', 'i', 'em', 'u', 'br', 'ul', 'ol', 'li', 'span', 'img', 'h1', 'h2', 'h3', 'blockquote'],
-                        ALLOWED_ATTR: ['src', 'alt', 'style', 'class', 'width', 'height']
-                      })
-                      .replace(/&nbsp;/g, ' ')
+                    __html: renderLatexInHtml(thisQuestion?.question || '')
                   }}
                 />
               )}

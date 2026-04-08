@@ -6,6 +6,7 @@ import UpgradePrompt from '../../components/upgradePrompt/UpgradePrompt';
 import { Link } from 'react-router-dom'
 import MathInput from "react-math-keyboard";
 import { X } from 'lucide-react'
+import { renderLatexInHtml } from '../../utils/latexRenderer';
 import getAssignment from '../../api/teacher/getAssignment.api'
 import getClass from '../../api/teacher/getClass.api';
 import duplicateAssignment from '../../api/assignment/duplicateAssignment.api';
@@ -13,8 +14,8 @@ import removeAssignment from '../../api/assignment/removeAssignment.api';
 import DashboardLoading from '../../components/dashboardLoading/DashboardLoading'
 import { History } from 'lucide-react'
 import soundEffects from '../../utils/soundEffects'
-import DOMPurify from 'dompurify'
 import '../../reusable.css'
+import '../question-render.css';
 import './TeacherDashboard.css'
 
 function TeacherDashboard() {
@@ -368,7 +369,7 @@ function TeacherDashboard() {
                                     {item?.questionPic ? <div className='d-flex question-img justify-content-center align-items-center'>
                                         <img src={item?.questionPic} alt="" />
                                     </div> : null}
-                                    <pre>{item?.question}</pre>
+<div className="question-html-clean" dangerouslySetInnerHTML={{__html: renderLatexInHtml(item?.question || '')}} />
                                     <div onClick={() => removeFromPocket(item._id)} className="remove-question">
                                         <i className="fa fa-trash" aria-hidden="true"></i>
                                     </div>
