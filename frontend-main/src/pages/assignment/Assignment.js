@@ -1092,7 +1092,7 @@ function Assignment() {
                         checked={answer === item}
                         onChange={e => handleChecked(e.target.value)} 
                       />
-                      <span className='mcq-text'>{item}</span>
+                      <span className='mcq-text' dangerouslySetInnerHTML={{ __html: renderLatexInHtml(item) }} />
                     </label>
                   ))}
                 </div>

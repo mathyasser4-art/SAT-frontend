@@ -6,7 +6,9 @@ import getAnswers from '../../api/assignment/getAnswers.api'
 import correctAnswer from '../../api/assignment/correctAnswer.api'
 import DashboardLoading from '../../components/dashboardLoading/DashboardLoading'
 import MathInput from "react-math-keyboard";
+import { renderLatexInHtml } from '../../utils/latexRenderer';
 import '../../reusable.css'
+import '../question-render.css'
 import './AssignmentReport.css'
 
 function AssignmentReport() {
@@ -148,18 +150,12 @@ function AssignmentReport() {
                       {/* {item?.question.questionPic ? <td onClick={() => openModelAnswer(item?.question.questionPic)}><img src={item?.question.questionPic} alt=''></img></td> : <td>-</td>} */}
                       <td>
                         <div className='d-flex justify-content-center'>
-                          <p className='question-assignment-title'>{item.question}</p>
+                          <p className='question-assignment-title question-html-clean' dangerouslySetInnerHTML={{ __html: renderLatexInHtml(item.question || '') }} />
                         </div>
                       </td>
                       <td>
                         {item.firstAnswer ? (
-                          <div className="mcq-answer assignment-report-answer">
-                            <div className="mcq-answer-layout">
-                              <input className='d-none' type="radio" id="berries_1" value={item.firstAnswer} name="berries" />
-                              <MathInput size="small" initialLatex={item.firstAnswer} />
-                              <div className="answer-layout"></div>
-                            </div>
-                          </div>
+                          <span className='question-html-clean' dangerouslySetInnerHTML={{ __html: renderLatexInHtml(item.firstAnswer || '') }} />
                         ) : '-'}
                       </td>
                       {/* <td>{item.secondAnswer ? ... : '-'}</td> */}
